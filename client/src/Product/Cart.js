@@ -5,13 +5,13 @@ import { addCart, delCart, remCart } from "../redux/Action/action";
 import Navbar from "../components/Navbar";
 // import { useLocation } from "react-router-dom";
 import img from "../assets/cart _back.jpg";
+import '../css/cart.css'
+// Cart.js
+
 
 const Cart = () => {
-  // const location = useLocation();
-  // const nameFromLogin = location.state ? location.state.id : "";
   const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
-
-  const state = useSelector((state) => state.cart); // Access the cart state from the Redux store
+  const state = useSelector((state) => state.cart);
   const dispatch = useDispatch();
 
   const handleAdd = (item) => {
@@ -36,120 +36,102 @@ const Cart = () => {
       </div>
     );
   };
+
   const cartItems = (product) => {
-    console.log(product);
     return (
-      <>
-        <div class="d-flex py-3">
-          <h3>
-            Total Price: {product.qty} X ${product.price} = $
-            {product.qty * product.price}
-          </h3>{" "}
-          <a class="mx-3 btn btn-primary" href="cart-check-out">
-            Check Out
-          </a>
-        </div>
-        <div class="container my-3">
-          <table class="table table-light">
-            <thead>
-              <tr>
-                <th scope="col">Image</th>
-                <th scope="col">Title</th>
-                <th scope="col">Category</th>
-                <th scope="col">Price</th>
-                <th scope="col">Buy Now</th>
-                <th scope="col">Cancel</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>
-                  {" "}
-                  <img
-                    src={product.image}
-                    alt="displayimage"
-                    // alt={product.title}
-                    height="70px"
-                    width="70px"
-                  />
-                </td>
-                <td>{product.title}</td>
-                <td>{product.category}</td>
-                <td>${product.price}</td>
-                <td>
-                  <form>
-                    <div class="form-group d-flex justify-content-between">
+      <div style={{ backgroundImage: `url(${img})` }}>
+        {state && state.length === 0 && emptyCart()}
+        {state && state.length !== 0 && (
+          <div className="cont" >
+            <table className="table">
+              <thead>
+                <tr>
+                  <th>Image</th>
+                  <th>Title</th>
+                  <th>Category</th>
+                  <th>Price</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr key={product.id}>
+                  <td>
+                    <img
+                      src={product.image}
+                      alt={product.title}
+                      height="70px"
+                      width="70px"
+                    />
+                  </td>
+                  <td>{product.title}</td>
+                  <td>{product.category}</td>
+                  <td>${product.price}</td>
+                  <td>
+                    <div className="btn-group">
                       <button
-                        class="btn bnt-sm btn-incre"
+                        className="btn-incre"
                         onClick={() => handleDel(product)}
                       >
-                        <i class="fas fa-plus-square"></i>-
+                        -
                       </button>
                       <input
                         type="text"
                         name="quantity"
-                        class="form-control "
-                        style={{ height: "40px", width: "100px" }}
+                        className="form-control"
+                        style={{ height: "35px", width: "100px" }}
                         value={product.qty}
-                        readonly
+                        readOnly
                       />
                       <button
-                        class="btn btn-sm btn-decre"
+                        className="btn-decre"
                         onClick={() => handleAdd(product)}
                       >
-                        <i class="fas fa-minus-square"></i>+
+                        +
+                      </button>
+                      <NavLink to={`/order/${product.id}`} style={{marginLeft:"-170px",marginBottom:"100px"}}>
+                        <button className="buy">Buy Now</button>
+                      </NavLink>
+                      <button   
+                        className="btn-danger"
+                        onClick={() => handleRemove(product)}
+                      >
+                        Remove
                       </button>
                     </div>
-
-                    {isAuthenticated ? (
-                      <>
-                        <NavLink
-                          to={`/order/${product.id}`}
-                          style={{ marginLeft: "90px", marginTop: "10px" }}
-                        >
-                          <button className="buy">Buy Now</button>
-                        </NavLink>
-                      </>
-                    ) : null}
-                  </form>
-                </td>
-                <td>
-                  <button
-                    class="btn btn-sm btn-danger"
-                    onClick={() => handleRemove(product)}
-                  >
-                    Remove
-                  </button>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <div className="d-flex justify-content-between">
+              <h3>
+                Total Price: ${state.reduce(
+                  (total, item) => total + item.qty * item.price,
+                  0
+                )}
+              </h3>
+              <NavLink to="cart-check-out" >
+                <button className="btn btn-primary checkout">Check Out</button>
+              </NavLink>
+            </div>
+          </div>
+        )}
+      </div>
     );
   };
+
   const buttons = () => {
     return (
-      <>
-        <div className="container">
-          <div className="row">
-            {/* <NavLink to="/checkout" className="btn btn-outline-dark mb-5 w-25 mx-auto">
-                            Proceed to Checkout
-                        </NavLink> */}
-          </div>
-        </div>
-      </>
+      <div className="contain">
+        <div className="row">{/* Add buttons if needed */}</div>
+      </div>
     );
   };
 
   return (
     <>
       <Navbar />
-      <div style={{ backgroundImage: `url(${img})` }}>
-        {state && state.length === 0 && emptyCart()}
-        {state && state.length !== 0 && state.map(cartItems)}
-        {state && state.length !== 0 && buttons()}
-      </div>
+      {state && state.length !== 0 && state.map(cartItems)}
+      {state && state.length !== 0 && buttons()}
     </>
   );
 };

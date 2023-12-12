@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import '../../index.css'
+import '../../css/admindashboard.css'
 import DashBoard from "../../pages/Dashboard";
 
 import { OrderDetails } from "../../orderpage/OrderDetails";
@@ -10,7 +10,7 @@ import { useNavigate } from "react-router-dom";
 // import { UserContext } from "../../App";
 import { logout } from "../../redux/Reducer/authSlice";
 import ProductStore from "../../Product/ProductStore";
-
+import { Dropdown } from 'react-bootstrap';
 
 
 
@@ -41,12 +41,12 @@ import ProductStore from "../../Product/ProductStore";
  
   const Headers = () => {
     return (
-      <div className="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow" >
+      <div className="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-4 shadow" >
         <h3 className="navbar-brand col-md-3 col-lg-2 me-0 px-2">
           Admin DashBoard
         </h3>
         <button
-          className="navbar-toggler position-absolute d-md-none collapsed"
+          className="navbar-toggler position-absolute d-md-none collapsed" 
           type="button"
           onClick={toggleSidebar}
         >
@@ -118,18 +118,18 @@ import ProductStore from "../../Product/ProductStore";
     };
   
     return (
-      <div style={{ height: "200px", width: "220px", }}>
+      <div style={{width: "220px",marginTop:"100px"}}>
         
         <nav id="sidebarMenu" className={`${isSidebarOpen ? "active" : ""} 
         col-md-2 col-lg-2 d-md-block bg-light sidebar`}
-           style={{ height: "20px", width: "220px",position:"fixed",backgroundColor:"lightgray"}}>
+           style={{ height: "200px", width: "220px"}}>
 
 
           <div className="position-sticky pt-3">
 
             <ul className="nav flex-column">
             <li className={`sidenav ${activeNavItem === 'Dashboard' ? 'active' : ''}`} onClick={() => handleItemClick('Dashboard')}>
-                <p style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', paddingTop: "3px" }}>
+                <p style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', paddingTop: "3px",}}>
                 <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="20"
@@ -243,9 +243,43 @@ import ProductStore from "../../Product/ProductStore";
                 </p>
               </li>
 
-            
+              {/* <li className={`sidenav ${activeNavItem === 'Products' ? 'active' : ''}`}>
+      <Dropdown onSelect={(eventKey) => handleItemClick(eventKey)}>
+        <Dropdown.Toggle
+          style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', paddingTop: '3px' }}
+          variant="link"
+          id="dropdown-basic"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            className="feather feather-shopping-cart"
+            aria-hidden="true"
+          >
+            <circle cx="9" cy="21" r="1"></circle>
+            <circle cx="20" cy="21" r="1"></circle>
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+          </svg>
+          <span className="mx-2">Products</span>
+        </Dropdown.Toggle>
+
+        <Dropdown.Menu>
+          <Dropdown.Item eventKey="option1">Option 1</Dropdown.Item>
+          <Dropdown.Item eventKey="option2">Option 2</Dropdown.Item>
+          <Dropdown.Item eventKey="option3">Option 3</Dropdown.Item>
+        </Dropdown.Menu>
+      </Dropdown>
+    </li> */}
             </ul>
           </div>
+          
         </nav>
       </div>
     );
@@ -263,14 +297,13 @@ import ProductStore from "../../Product/ProductStore";
       <SideNavBar />
       <h1 style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%' ,
         marginLeft:"230px"}}>
-        {!showDashboard && !showOrder && !showProducts && !showCustomer && !showIntegrations && <p style={{height:"200px",
-        color:"blue",fontWeight:"bold"}}>Welcome To AdminDashBoard</p>}
-        {showDashboard && <div style={{marginTop:"-300px"}}><DashBoard/></div>}
+        {!showDashboard && !showOrder && !showProducts && !showCustomer && !showIntegrations && <p className="adminhome">Welcome To AdminDashBoard</p>}
+        {showDashboard && <div className="dashb"><DashBoard/></div>}
         
-        {showOrder &&<div style={{marginTop:"-200px"}}><OrderDetails/></div>}
-        {showProducts && <h2 style={{color:"green" ,marginTop:"-230px",width:"100%",fontSize:"1rem",marginLeft:"-30px"}}><Productadmin/></h2>}
-        {showCustomer && <div style={{marginTop:"-130px",height:"250px"}}><DashboardUser/></div>}
-        {showIntegrations && <h2 style={{marginTop:"-190px"}}><ProductStore/></h2>}
+        {showOrder &&<div className="order"><OrderDetails/></div>}
+        {showProducts && <h2  className="products"><Productadmin/></h2>}
+        {showCustomer && <div style={{marginTop:"-230px",height:"250px"}}><DashboardUser/></div>}
+        {showIntegrations && <h2 style={{marginTop:"-290px"}}><ProductStore/></h2>}
 
       </h1>
     </div>
@@ -278,3 +311,5 @@ import ProductStore from "../../Product/ProductStore";
 };
  
 export default AdminDashBoard
+
+// i need fabars ,click on fabars open dashboard,order,product, and logout

@@ -4,7 +4,7 @@ import { NavLink, useParams } from 'react-router-dom';
 import { addCart } from '../redux/Action/action';
 import { useDispatch, useSelector } from 'react-redux';
 import Navbar from '../components/Navbar';
-
+import '../css/product.css'
 const Productdata = () => {
   const state = useSelector(state => console.log(state));
   const { id } = useParams();
@@ -64,10 +64,11 @@ const Productdata = () => {
   const ShowProduct = () => {
     return (
       <>
-        <div className="produc subcategory col-md-6" >
-          <img src={product.image} alt="presentation" style={{ height: '350px', width: '350px', borderRadius: '1px' }} />
+        <div className="product col-md-6" style={{marginRight:"100px",marginLeft:"20px"}} >
+          <img src={product.image} alt="presentation"style={{ height: '400px', width: '450px', borderRadius: '1px' }} />
         </div>
-        <div className="subcategory col-md-6" style={{marginTop:"80px"}}>
+
+        <div className="col-md-6" style={{marginLeft:"5px"}}>
           <div style={{ fontSize: '1.4rem', fontWeight: 'bold', marginBottom: '10px' }}>
             {' '}
             <h4>{product.category} </h4>
@@ -99,7 +100,7 @@ const Productdata = () => {
             {/* Ensure 'to' prop is specified with a valid route */}
             <NavLink to="/cart" className="nav-link" activeClassName="active" style={{marginLeft:"100px",marginTop:"-55px"}}>
               {/* Add a valid href attribute */}
-              <button className="buy">Go to Cart</button>
+              <button className="buy1">Go to Cart</button>
             </NavLink>
           </div>
         </div>

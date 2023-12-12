@@ -1,106 +1,91 @@
 import React, { useEffect, useRef, useState } from 'react';
 import Chart from 'chart.js/auto';
-
+import '.././css/admindashboard.css'
 function DashBoard() {
-   
-
-    const chartRef = useRef(null);
-    const [chartInstance, setChartInstance] = useState(null);
-   
-    useEffect(() => {
-      
-        const ctx = chartRef.current?.getContext('2d');
-      
-        if (ctx) {
-          
-          if (chartInstance) {
-            chartInstance.destroy();
-          }
-      
-         
-          const chartData = {
-            labels: ['Label 1', 'Label 2', 'Label 3'],
-            datasets: [
-              {
-                label: 'Sales',
-                data: [14, 23, 16],
-                backgroundColor: ['blue', 'green', 'red'],
-              },
-            ],
-          };
-      
-          const chartOptions = {
-            responsive: true,
-            maintainAspectRatio: false,
-          };
-      
-          
-          const newChartInstance = new Chart(ctx, {
-            type: 'bar', 
-            data: chartData,
-            options: chartOptions,
-          });
-      
-      
-          setChartInstance(newChartInstance);
-      
-       
-          return () => {
-            newChartInstance.destroy();
-          };
-        }
-      }, [chartRef,chartInstance]); 
-
-
-
+  const chartRef = useRef(null);
   const canvasRef = useRef(null);
-      useEffect(() => {
-      
-        const ctx = canvasRef.current?.getContext('2d');
-      
-        if (ctx) {
-          
-          if (chartInstance) {
-            chartInstance.destroy();
-          }
-      
-         
-          const chartData = {
-            labels: ['Label 1', 'Label 2', 'Label 3','Label 4','Label 5'],
-            datasets: [
-              {
-                label: 'Sales',
-                data: [14, 23, 16,3,26],
-                backgroundColor: ['pink','blue', 'green', 'red','lightgray'],
-              },
-            ],
-          };
-      
-          const chartOptions = {
-            responsive: true,
-            maintainAspectRatio: false,
-          };
-      
-          
-          const newChartInstance = new Chart(ctx, {
-            type: 'pie', 
-            data: chartData,
-            options: chartOptions,
-          });
-      
-      
-          setChartInstance(newChartInstance);
-      
-       
-          return () => {
-            newChartInstance.destroy();
-          };
-        }
-      }, [canvasRef,chartInstance]); 
+
+  const [barChartInstance, setBarChartInstance] = useState(null);
+  const [pieChartInstance, setPieChartInstance] = useState(null);
+
+  useEffect(() => {
+    const ctx = chartRef.current?.getContext('2d');
+
+    if (ctx && !barChartInstance) {
+      const chartData = {
+        labels: ['Label 1', 'Label 2', 'Label 3'],
+        datasets: [
+          {
+            label: 'Sales',
+            data: [14, 23, 16],
+            backgroundColor: ['blue', 'green', 'red'],
+          },
+        ],
+      };
+
+      const chartOptions = {
+        responsive: true,
+        maintainAspectRatio: false,
+      };
+
+      const newChartInstance = new Chart(ctx, {
+        type: 'bar',
+        data: chartData,
+        options: chartOptions,
+      });
+
+      setBarChartInstance(newChartInstance);
+    }
+
+    return () => {
+      if (barChartInstance) {
+        barChartInstance.destroy();
+        setBarChartInstance(null);
+      }
+    };
+  }, [chartRef, barChartInstance]);
+
+  useEffect(() => {
+    const ctx = canvasRef.current?.getContext('2d');
+
+    if (ctx && !pieChartInstance) {
+      const chartData = {
+        labels: ['Label 1', 'Label 2', 'Label 3', 'Label 4', 'Label 5'],
+        datasets: [
+          {
+            label: 'Sales',
+            data: [14, 23, 16, 3, 26],
+            backgroundColor: ['pink', 'blue', 'green', 'red', 'lightgray'],
+          },
+        ],
+      };
+
+      const chartOptions = {
+        responsive: true,
+        maintainAspectRatio: false,
+      };
+
+      const newChartInstance = new Chart(ctx, {
+        type: 'pie',
+        data: chartData,
+        options: chartOptions,
+      });
+
+      setPieChartInstance(newChartInstance);
+    }
+
+    return () => {
+      if (pieChartInstance) {
+        pieChartInstance.destroy();
+        setPieChartInstance(null);
+      }
+    };
+  }, [canvasRef, pieChartInstance]);
+
       
     
   return (
-  <div style={{backgroundColor:"lightgray",padding:"20px",paddingTop:"40px",height:"1000px",marginTop:"100px",width:"100%"}}>
+  <div className='dashboard'>
     <h2 style={{fontSize:"1.5rem",fontWeight:"bold",marginBottom:"10px"}}>DashBoard</h2>
     <div className="grid gap-2 mb-8 xl:grid-cols-5 md:grid-cols-2" >
         

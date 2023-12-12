@@ -130,7 +130,7 @@ const Footer = () => {
               <input type="email" name="emailAddress" id="emailAddress" autoComplete="email" required
                 style={{ fontFamily: "Arial", fontSize: "14px", padding: "10px", borderRadius: "8px", }}
                 placeholder="Enter your email" />
-              <button type="submit" className="btn btn-primary" style={{ fontFamily: "Arial", fontSize: "14px", marginLeft: "200px",marginTop:"-40px",border:"2px solid white" }}>Subscribe</button>
+              <button type="submit" className="btn btn-primary" style={{ fontFamily: "Arial", fontSize: "14px", marginLeft: "200px",marginTop:"-40px",border:"2px solid white" ,color:"white",width:"90px",height:"40px"}}>Subscribe</button>
             </form>
 
 
@@ -140,36 +140,41 @@ const Footer = () => {
       </div>
 
 
-      <div className="container mt-0 border-top border-light" style={{marginTop:"-3000px"}}>
-        <div className="row" style={{ paddingBottom: "50px", }}>
-          <div className="col-md-6 text-center text-md-left" style={{
-            fontFamily: "Arial",
-            fontSize: "20px", paddingTop: "23px", marginLeft: "-80px"
-          }}>
-            &copy; 2023 Training, Inc. All rights reserved.
-          </div>
-          <div className="col-md-4">
-            <div className="social-icons" style={{display:"flex",paddingTop:"20px"}}>
-              <a href="https://www.facebook.com/" className="text-light mr-3" style={{ marginRight: "10px",marginTop:"10px",marginLeft:"490px" }}>
-                <FontAwesomeIcon icon={faFacebook} size="1x" />
-              </a>
-              <a href="https://www.instagram.com/accounts/login/?hl=en" className="text-light mr-3"  style={{ marginRight: "10px",marginTop:"10px", }}>
-                <FontAwesomeIcon icon={faInstagram} size="1x" />
-              </a>
-              <a href="https://twitter.com/" className="text-light mr-3" style={{ marginRight: "10px",marginTop:"10px",}} >
-                <FontAwesomeIcon icon={faTwitter} size="1x" />
-              </a>
-              <a href="https://github.com/Akash-Traveller/Training-Proj" className="text-light mr-3" style={{ marginRight: "10px",marginTop:"10px", }}>
-                <FontAwesomeIcon icon={faGithub} size="1x" />
-              </a>
-              <a href="https://www.google.com/" className="text-light text-light mr-3"style={{ marginRight: "10px",marginTop:"10px", }} >
-                <FontAwesomeIcon icon={faDribbble} size="1x" />
-              </a>
-            </div>
+      <div className="container mt-0 border-top border-light" style={{ marginTop: "-3000px" }}>
+  <div className="row" style={{ paddingBottom: "50px" }}>
 
-          </div>
-        </div>
+    {/* Copyright text */}
+    <div className="col-md-6 col-12 text-center text-md-left mb-3">
+      <p style={{ fontFamily: "Arial", fontSize: "20px", margin: 0 }}>
+        &copy; 2023 Training, Inc. All rights reserved.
+      </p>
+    </div>
+
+    {/* Social icons */}
+    <div className="col-md-6 col-12 d-flex justify-content-center justify-content-md-end">
+      <div className="social-icons">
+        <a href="https://www.facebook.com/" className="text-light mr-3">
+          <FontAwesomeIcon icon={faFacebook} size="2x" />
+        </a>
+        <a href="https://www.instagram.com/accounts/login/?hl=en" className="text-light mr-3">
+          <FontAwesomeIcon icon={faInstagram} size="2x" />
+        </a>
+        <a href="https://twitter.com/" className="text-light mr-3">
+          <FontAwesomeIcon icon={faTwitter} size="2x" />
+        </a>
+        <a href="https://github.com/Akash-Traveller/Training-Proj" className="text-light mr-3">
+          <FontAwesomeIcon icon={faGithub} size="2x" />
+        </a>
+        <a href="https://www.google.com/" className="text-light mr-3">
+          <FontAwesomeIcon icon={faDribbble} size="2x" />
+        </a>
       </div>
+    </div>
+
+  </div>
+</div>
+
+    
     </footer>
   );
 }

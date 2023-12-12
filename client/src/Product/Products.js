@@ -132,17 +132,16 @@ const Products = () => {
  <Navbar/>
       <div className='back'>
    
-        <center>
-          <Search
+      <div class="search-container">
+      <Search
             className="search"
             placeholder="Search by category"
             onSearch={onSearch}
             enterButton
-            style={{ width: "550px",backgroundColor:"blue",marginTop:"50px" }}
+            
           />
-        </center>
-        
-        <div className='display' >
+        </div>
+     <div className='display' >
           <App/>
 
           <div className='home'>

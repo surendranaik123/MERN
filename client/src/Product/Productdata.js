@@ -68,10 +68,10 @@ useEffect(() => {
   const ShowProduct = () => {
     return (
       <>
-        <div className="col-md-6">
-          <img src={product.image} alt="presentation" style={{ height: '350px', width: '350px', borderRadius: '1px' }} />
+        <div className="col-md-6 product" style={{marginRight:"200px"}}>
+          <img src={product.image} alt="presentation" style={{ height: '400px', width: '450px', borderRadius: '1px' }} />
         </div>
-        <div className="col-md-6">
+        <div className="col-md-6" style={{marginLeft:"20px"}}>
           <div style={{ fontSize: '1.4rem', fontWeight: 'bold', marginBottom: '10px' }}>
             
             <h4>{product.category} </h4>
@@ -80,16 +80,17 @@ useEffect(() => {
             <h3 style={{ fontSize: '1.1rem', marginBottom: '10px' }}>{product.title}</h3>
           </div>
 
-          <div style={{ display: 'flex', marginBottom: '10px' }}>
+          <div className='product-details-container' style={{ display: 'flex', marginBottom: '10px' }}>
             <h3 style={{ display: 'flex' }}>
               <h2 style={{ fontSize: '1.5rem', color: 'blue', fontWeight: 'bold' }}>Price:</h2>
               <h2 style={{ fontWeight: 'bold', marginTop: '4px', fontSize: '1.3rem' }}>${product.price}</h2>
             </h3>
 
-            <h3 style={{ display: 'flex', marginLeft: '30px' }}>
-              <h2 style={{ fontSize: '1.3rem', color: 'Red', fontWeight: 'bold' }}>Rating:</h2>
+            <h3 style={{ display: 'flex', marginLeft: '30px' }} classNames='rate'>
+              <h2 style={{ fontSize: '1.3rem', color: 'Red', fontWeight: 'bold' }} >Rating:</h2>
               <h2 style={{ fontWeight: 'bold', marginTop: '-3px', fontSize: '1.3rem' }}>
               <Rating
+               
                       count={5}
                       value={product.rating} 
                       size={24}
@@ -108,7 +109,7 @@ useEffect(() => {
               Add to Cart
             </button>
             <NavLink to="/cart">
-              <button className="buy">Go to Cart</button>
+              <button className="buy1">Go to Cart</button>
             </NavLink>
           </div>
         </div>

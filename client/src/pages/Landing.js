@@ -36,7 +36,7 @@ const Landing = () => {
 
   const [Loading, setLoading] = useState(true);
 
-  console.log(product,Loading);
+  console.log(product, Loading);
   useEffect(() => {
     axios
       .get("http://localhost:9000/api/v1/productdata")
@@ -110,7 +110,7 @@ const Landing = () => {
       </button>
     </Dropdown>
   );
-console.log(App);
+  console.log(App);
   useEffect(() => {
     // Fetch product data from API
     axios
@@ -182,41 +182,28 @@ console.log(App);
                     // alt={`Product: ${product.title}`}
                   />
 
-                  <h5
-                    style={{
-                      marginLeft: "30px",
-                      marginTop: "-10px",
-                      fontSize: "1.3rem",
-                    }}
-                  >
+                  <h5 className="category">
                     {product.category}
                   </h5>
-                  <div style={{display:"flex"}}>
-                  <h5
-                    style={{
-                      marginLeft: "20px",
-                      marginBottom: "10px",
-                      marginTop: "10px",
-                      fontSize: "1.1rem",
-                    }}
-                  >
-                    Price:${product.price}
-                  </h5>
-                  <h5
-                    style={{
-                      marginLeft: "30px",
-                      marginBottom: "30px",
-                      fontSize: "1.1rem",
-                      marginTop: "5px",
-                    }}
-                  >
-                    <Rating
-                      count={5}
-                      value={product.rating.rate}
-                      size={24}
-                      activeColor="green"
-                    />
-                  </h5>
+                  <div style={{ display: "flex" }}>
+                    <h5 className="prices">
+                      Price:${product.price}
+                    </h5>
+                    <h5
+                      style={{
+                        marginLeft: "30px",
+                        marginBottom: "30px",
+                        fontSize: "1.1rem",
+                        marginTop: "5px",
+                      }}
+                    >
+                      <Rating
+                        count={5}
+                        value={product.rating.rate}
+                        size={24}
+                        activeColor="green"
+                      />
+                    </h5>
                   </div>
 
                   <div style={{ marginTop: "-30px", marginLeft: "40px" }}>
@@ -262,6 +249,7 @@ console.log(App);
                 activeClassName={"active"}
               />
             </div>
+
           </div>
         </div>
       </>
@@ -280,9 +268,8 @@ console.log(App);
             <h3>New Arrival</h3>
 
             {productsToShow < data.length && (
-              <h5 className="arrived" style={{ marginLeft: "1080px" }} onClick={loadMoreProducts}>
-                {" "}
-                View More <i className="bi bi-arrow-right"></i>
+              <h5 className="arrived" onClick={loadMoreProducts}>View More 
+              <i className="bi bi-arrow-right"></i>
               </h5>
             )}
           </div>
@@ -342,133 +329,70 @@ console.log(App);
     <>
       <Navbar />
       <div style={{ backgroundColor: "#D1EAF0" }}>
-        <center>
+        <div class="search-container">
           <Search
             className="search"
             placeholder="Search by category"
             onSearch={onSearch}
             enterButton
-            style={{
-              width: "550px",
-              backgroundColor: "blue",
-              marginTop: "40px",
-              marginBottom: "10px",
-            }}
           />
-        </center>
+        </div>
 
-        <Carousel autoplay>
+        <Carousel autoplay style={{ backgroundColor: "none" }}>
           <div>
             <div className="dis">
               <div className="hero">
-                <p style={{ fontSize: "2.5rem", fontWeight: "bold" }}>
-                  {" "}
-                  Fashion Hunt
-                </p>
-                <h1
-                  style={{
-                    fontSize: "3.6rem",
-                    fontWeight: "bold",
-                    marginTop: "20px",
-                    marginBottom: "30px",
-                  }}
-                >
+                <p className="para">Fashion Hunt </p>
+                <h1 className="heading">
                   Shop the Hottest Brands and Designs at Shop
                 </h1>
-                <button
-                  style={{
-                    borderRadius: "5px",
-                    padding: "5px",
-                    width: "auto",
-                    height: "45px",
-                    backgroundColor: "#add8e6",
-                    border: "2px solid #add8e6",
-                    fontSize: "1.2rem",
-                  }}
-                  onClick={handleProducts}
-                >
-                  Shop Now ..
-                </button>
+                <div className="btn-container">
+                  <button className="btn" onClick={handleProducts}>
+                    Shop Now ..
+                  </button>
+                </div>
               </div>
-              <img className="home_img" src={img1} alt="presentation" />
+              <div>
+                <img className="home_img" src={img1} alt="presentation" />
+              </div>
             </div>
           </div>
 
           <div>
-            <div
-              className="dis"
-              style={{ backgroundColor: "lightgoldenrodyellow" }}
-            >
+            <div className="dis">
               <div className="hero">
-                <p style={{ fontSize: "2.5rem", fontWeight: "bold" }}>
-                  {" "}
-                  Fashion Hunt
-                </p>
-
-                <h1
-                  style={{
-                    fontSize: "3.6rem",
-                    fontWeight: "bold",
-                    marginTop: "20px",
-                    marginBottom: "30px",
-                  }}
-                >
+                <p className="para">Fashion Hunt </p>
+                <h1 className="heading">
                   Shop the Hottest Brands and Designs at Shop
                 </h1>
-
-                <button
-                  style={{
-                    borderRadius: "5px",
-                    padding: "5px",
-                    width: "auto",
-                    height: "45px",
-                    backgroundColor: "lightsalmon",
-                    border: "2px solid #add8e6",
-                    fontSize: "1.2rem",
-                  }}
-                  onClick={handleProducts}
-                >
-                  Shop Now ..
-                </button>
+                <div className="btn-container">
+                  <button className="btn" onClick={handleProducts}>
+                    Shop Now ..
+                  </button>
+                </div>
               </div>
-              <img className="home_img" src={img2} alt="presentation" />
+              <div>
+                <img className="home_img" src={img2} alt="presentation" />
+              </div>
             </div>
           </div>
+
           <div>
             <div className="dis">
               <div className="hero">
-                <p style={{ fontSize: "2.5rem", fontWeight: "bold" }}>
-                  {" "}
-                  Fashion Hunt
-                </p>
-
-                <h1
-                  style={{
-                    fontSize: "3.6rem",
-                    fontWeight: "bold",
-                    marginTop: "20px",
-                    marginBottom: "30px",
-                  }}
-                >
+                <p className="para">Fashion Hunt </p>
+                <h1 className="heading">
                   Shop the Hottest Brands and Designs at Shop
                 </h1>
-
-                <button
-                  style={{
-                    borderRadius: "5px",
-                    padding: "5px",
-                    width: "auto",
-                    height: "45px",
-                    backgroundColor: "#add8e6",
-                    border: "2px solid #add8e6",
-                    fontSize: "1.2rem",
-                  }}
-                  onClick={handleProducts}
-                >
-                  Shop Now ..
-                </button>
+                <div className="btn-container">
+                  <button className="btn" onClick={handleProducts}>
+                    Shop Now ..
+                  </button>
+                </div>
               </div>
-              <img className="home_img" src={img3} alt="presentation" />
+              <div>
+                <img className="home_img" src={img3} alt="presentation" />
+              </div>
             </div>
           </div>
         </Carousel>
@@ -513,7 +437,7 @@ console.log(App);
           </div>
         </div>
 
-        <div
+     <div
           style={{
             display: "flex",
             marginLeft: "50px",
@@ -561,21 +485,17 @@ console.log(App);
             <h6 style={{ color: "white", fontWeight: "bold" }}>Best Quality</h6>
             <h6 style={{ color: "white" }}>Original Product Guarenteed</h6>
           </div>
-        </div>
+        </div> 
       </div>
 
-      {/* {isAuthenticated ? (
-  <>
- <Product1 />
-  </>
-) :( <ProductAll data={data} />)} */}
+   
 
       <Product1 />
 
       <div className="home_back">
         <div class="w-full xl:p-12 p-5">
           <div class="countdown-wrapper w-full flex space-x-[23px] mb-10">
-            <div class="countdown-item">
+            <div className="offer">
               <div class="countdown-number sm:w-[100px] sm:h-[100px] w-[50px] h-[50px] rounded-full bg-white flex justify-center items-center">
                 <span class="font-700 sm:text-[30px] text-[14px] text-[#EB5757]">
                   0
@@ -595,8 +515,8 @@ console.log(App);
                 Hours
               </p>
             </div>
-            <div class="countdown-item">
-              <div class="countdown-number sm:w-[100px] sm:h-[100px] w-[50px] h-[50px] rounded-full bg-white flex justify-center items-center">
+            <div >
+              <div class=" countdown-number sm:w-[100px] sm:h-[100px] w-[50px] h-[50px] rounded-full bg-white flex justify-center items-center">
                 <span class="font-700 sm:text-[30px] text-[14px] text-[#219653]">
                   0
                 </span>
@@ -617,19 +537,21 @@ console.log(App);
             </div>
           </div>
           <div class="countdown-title mb-4 ml-5">
-            <h1 class="text-[44px] text-qblack font-medium">WOO! Flash Sale</h1>
-            <p class="text-[18px] text-qblack leading-7">
-              You get into the 2k+ best Products in Flash offer with a<br></br>
+            <h1 className="heading1">WOO! Flash Sale</h1>
+            <p className="para1">
+              You get into the 2k+ best Products in Flash offer with a
               special-shaped sofa for sale.
             </p>
           </div>
-          <div class=" w-[100px] h-8 border-b border-qblack ml-5">
-            <div class=" h-full inline-flex space-x-2  items-center">
-              <span class="text-sm font-600 tracking-wide leading-7 " onClick={handleProducts}>
+          <div >
+            
+              <span
+               className="shopnow"
+                onClick={handleProducts}
+              >
                 Shop Now
               </span>
             
-            </div>
           </div>
         </div>
       </div>

@@ -10,7 +10,7 @@ const Order = () => {
   const user = useSelector((state) => state.auth.user);
 
   const navigate = useNavigate();
-  
+
   const { id } = useParams();
   const [placeDetails, setPlaceDetails] = useState();
   const [product, setProduct] = useState({});
@@ -37,7 +37,6 @@ const Order = () => {
 
   const [image, setImage] = useState({ myFile: "" });
 
-  
   const handleFileUpload = async (e) => {
     const file = e.target.files[0];
     const base64 = await convertToBase64(file);
@@ -69,7 +68,7 @@ const Order = () => {
         );
 
         setProduct(response.data);
-  
+
         // Initialize placeDetails after fetching product data
         const placeDetails = {
           username: user ? user.fname : "Guest",
@@ -83,7 +82,7 @@ const Order = () => {
           date: formattedDate,
           image: response.data.image,
         };
-  
+
         setPlaceDetails(placeDetails);
         setOrderDetails((prevOrderDetails) => ({
           ...prevOrderDetails,
@@ -94,11 +93,17 @@ const Order = () => {
         console.error(error);
       }
     };
-  
+
     fetchProduct();
-  }, [id, user, orderDetails.quantity, formattedDate, setPlaceDetails, setOrderDetails]);
-  
-  
+  }, [
+    id,
+    user,
+    orderDetails.quantity,
+    formattedDate,
+    setPlaceDetails,
+    setOrderDetails,
+  ]);
+
   useEffect(() => {
     if (product.price !== undefined) {
       const newTotalPrice = orderDetails.quantity * product.price;
@@ -225,10 +230,11 @@ const Order = () => {
             borderBottom: "10px solid #f2f2f2",
             marginBottom: "20px",
             width: "100%",
-          }}
-        ></div>
+          }} >
 
-        <div>
+        </div>
+
+        <div className="productde" style={{display:"flex"}}>
           <h6
             style={{
               color: "green",
@@ -242,27 +248,18 @@ const Order = () => {
             Product Details
           </h6>
         </div>
+        <div className="oder">
         <img
-  src={product.image}
-  alt={product.title} // Provide a meaningful description here
-  className="img1"
-  type="file"
-  label="Image"
-  name="myFile"
-  id="file-upload"
-  accept=".jpeg, .png, .jpg"
-  onChange={(e) => handleFileUpload(e)}
-/>
-
-
-{/* <input
-                  type="file"
-                  lable="Image"
-                  name="myFile"
-                  id="file-upload"
-                  accept=".jpeg, .png, .jpg"
-                  onChange={(e) => handleFileUpload(e)}
-                /> */}
+          src={product.image}
+          alt={product.title} // Provide a meaningful description here
+          className="img1"
+          type="file"
+          label="Image"
+          name="myFile"
+          id="file-upload"
+          accept=".jpeg, .png, .jpg"
+          onChange={(e) => handleFileUpload(e)}
+        />
         <h5
           className="title1"
           onChange={(e) =>
@@ -287,9 +284,9 @@ const Order = () => {
           </div>
           <h5> {product.price}</h5>
         </div>
-      
-        <div
-          style={{ marginLeft: "170px", display: "flex", marginTop: "20px" }}
+
+        <div className="rating1"
+        
         >
           <h1
             style={{ fontSize: "1.2rem", fontWeight: "bold", marginTop: "5px" }}
@@ -303,8 +300,9 @@ const Order = () => {
             activeColor="green"
           />
         </div>
+        </div>
         <div className="qty">
-          <label style={{ marginLeft: "30px", marginRight: "60px" }}>
+          <label style={{ marginLeft: "20px", marginRight: "40px" }}>
             Quantity:
             <input
               style={{
@@ -343,6 +341,7 @@ const Order = () => {
             marginTop: "20px",
           }}
         >
+          <div className="delivery" >
           <div style={{ display: "flex", width: "180px" }}>
             <label>Delivery by: </label>
             <h2
@@ -384,6 +383,7 @@ const Order = () => {
             </label>
           </div>
         </div>
+        </div>
         <div
           style={{
             display: "flex",
@@ -391,17 +391,18 @@ const Order = () => {
             alignItems: "center",
           }}
         >
+         
           <button type="submit" className="placeorder">
             Place Order
           </button>
         </div>
+       
       </form>
     </div>
   );
 };
 
 export default Order;
-
 
 function convertToBase64(file) {
   return new Promise((resolve, reject) => {
