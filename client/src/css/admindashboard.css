@@ -4,6 +4,7 @@
   border-radius: 5px;
   padding-left: 18px;
   padding-top: 3px;
+  margin-bottom: 5px;
   color: blue;
   display: flex; /* Add display: flex to make align-items work */
   align-items: center;
@@ -35,7 +36,7 @@
 
 }
 .dashb{
-  margin-top: -400px;
+  margin-top: -300px;
 }
 .order{
   margin-top: -300px;
@@ -137,8 +138,7 @@ font-size: 1.5rem;
   }
 
   .nav.flex-column {
-
-    padding: 15px;
+margin-top: -80px;
   }
 
   .navbar-toggler {
