@@ -2,6 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 import Container from "react-bootstrap/esm/Container";
 import Rating from "react-rating-stars-component";
+import '../css/product.css'
 
 export default function ProductStore({ onSubmit }) {
   const [category, setCategory] = useState("");
@@ -82,8 +83,8 @@ export default function ProductStore({ onSubmit }) {
 
   return (
     <>
-      <Container>
-        <div class="min-h-screen bg-white flex">
+      <Container >
+        <div class="min-h-screen bg-white flex productadd">
           <div class="flex-1 flex flex-col py-12 px-4 sm:px-4 lg:flex-none lg:px-20 xl:px-24">
             <div class="mx-auto w-full max-w-sm lg:w-96">
               <form className="space-y-6 " onSubmit={handleSubmit}>

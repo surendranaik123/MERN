@@ -149,10 +149,14 @@ function Navbar() {
                   </DropdownItem>
 
                   <DropdownItem
-                    onClick={handleorder}
-                    className=" customdetails-dropdown-item  inline-flex items-center px-2 py-2 border  border-gray-500 text-base font-medium rounded-md text-black hover:bg-emerald-600"
+                  className=" customdetails-dropdown-item  inline-flex items-center px-2 py-2 border  border-gray-500 text-base font-medium rounded-md text-black hover:bg-emerald-600"
                   >
+                  <NavLink
+                to={`/order?username=${user ? user.fname : ""}`} >
+              
+              
                     My Orders
+                    </NavLink>
                   </DropdownItem>
 
                   <DropdownItem

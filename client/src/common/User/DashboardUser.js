@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import 'tailwindcss/tailwind.css';
+import '../../css/contact.css'
 
 export default function DashboardUser() {
     const [data,setData]=useState(null)
@@ -16,7 +17,7 @@ export default function DashboardUser() {
           });
   }, []);
     return (
-   <div style={{backgroundColor:"lightpink"}}>
+   <div className='userdata' style={{backgroundColor:"lightpink"}}>
       <table className='min-w-full bg-white border border-gray-300'>
         <thead style={{color:"red"}}>
           <tr>

@@ -232,6 +232,58 @@ const AdminDashBoard = () => {
                   <span className="mx-2">Products</span>
                 </p>
               </li> */}
+                
+                <li
+                className={`sidenavproduct ${
+                  activeNavItem === "Products" ? "active" : ""
+                }`}
+              >
+                <div class="dropdown">
+                  <button
+                    class="sidenav"
+                    type="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className="feather feather-shopping-cart"
+                      aria-hidden="true"
+                    >
+                      <circle cx="9" cy="21" r="1"></circle>
+                      <circle cx="20" cy="21" r="1"></circle>
+                      <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                    </svg>
+                    <span className="mx-2" style={{paddingLeft:"-30px"}}>Products</span>
+                  </button>
+                  <ul class="dropdown-menu">
+                    <li className="sidenav">
+                      <a
+                        class="dropdown-item"
+                        onClick={() => handleItemClick("Products")}
+                      >
+                        ProductsData
+                      </a>
+                    </li>
+                    <li className="sidenav">
+                      <a
+                        class="dropdown-item"
+                        onClick={() => handleItemClick("Integrations")}
+                      >
+                       Product Add
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
 
               <li
                 className={`sidenav ${
@@ -358,57 +410,7 @@ const AdminDashBoard = () => {
                 </Dropdown>
               </li> */}
 
-              <li
-                className={`sidenavproduct ${
-                  activeNavItem === "Products" ? "active" : ""
-                }`}
-              >
-                <div class="dropdown">
-                  <button
-                    class="sidenav"
-                    type="button"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="20"
-                      height="20"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className="feather feather-shopping-cart"
-                      aria-hidden="true"
-                    >
-                      <circle cx="9" cy="21" r="1"></circle>
-                      <circle cx="20" cy="21" r="1"></circle>
-                      <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
-                    </svg>
-                    <span className="mx-2" style={{paddingLeft:"-30px"}}>Products</span>
-                  </button>
-                  <ul class="dropdown-menu">
-                    <li className="sidenav">
-                      <a
-                        class="dropdown-item"
-                        onClick={() => handleItemClick("Products")}
-                      >
-                        Action
-                      </a>
-                    </li>
-                    <li className="sidenav">
-                      <a
-                        class="dropdown-item"
-                        onClick={() => handleItemClick("Integrations")}
-                      >
-                        Another action
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </li>
+              
             </ul>
           </div>
         </nav>

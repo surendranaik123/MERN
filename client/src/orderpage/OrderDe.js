@@ -4,6 +4,7 @@ import '../css/order.css';
 import { useLocation} from 'react-router-dom';
 // import Navbar  from '../components/Navbar';
 import { useSelector } from 'react-redux';
+import Navbar from '../components/Navbar';
 
 export const OrderDe = () => {
   // const navigate=useNavigate()
@@ -43,13 +44,13 @@ console.log(data,setSuccess);
  
   return (
     <div>
-
+   <Navbar/>
       <h2 style={{ textAlign: "center", color: "blue", marginTop: "20px" }}>Order History</h2>
-      <center>
+      {/* <center>
       <h2 style={{color:"green",marginTop:"-20px"}}>--------------------</h2>
-      </center>
+      </center> */}
       <div>
-         <h3 style={{color:"blue"}}>UserName: @{user ? user.name : 'Guest'}</h3>
+         {/* <h3 style={{color:"blue"}}>UserName: @{user ? user.name : 'Guest'}</h3> */}
         {success && <p style={{ color: 'green' }}>{success}</p>}
         {error && <p style={{ color: 'red' }}>{error}</p>}
         <table className="table" style={{backgroundColor:"red"}}>
