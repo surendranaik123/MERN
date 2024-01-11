@@ -15,13 +15,14 @@ connectToMongo();
 
 
 // Apply middleware
-app.use(bodyParser.json({ limit: '10mb' }));
+// app.use(bodyParser.json({ limit: '10mb' }));
 app.use(express.json());
-app.use(cors({
-  origin:[""],
-  methods:["post","get"],
-  credentials:true
-}));
+// app.use(cors());
+
+// Apply middleware
+app.use(cors());
+app.use(express.json({ limit: '10mb' }));
+
 
 app.get("/", (req, res) => {
   res.send("API is running");
