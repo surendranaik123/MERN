@@ -67,7 +67,7 @@ export default function ProductStore({ onSubmit }) {
           date,
         }
       );
-
+      alert("Success");
       console.log("Response from server:", categoryResponse.data);
     } catch (error) {
       console.error(error);

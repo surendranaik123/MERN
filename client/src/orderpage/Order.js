@@ -12,7 +12,18 @@ const Order = () => {
   const navigate = useNavigate();
 
   const { id } = useParams();
-  const [placeDetails, setPlaceDetails] = useState();
+  const [placeDetails, setPlaceDetails] = useState({
+    username: user ? user.fname : "Guest",
+    name: "",
+    addres: "",
+    phoneno: "",
+    productid: id,
+    producttitle: "",
+    productqty: 1,
+    totalPrice: 0,
+
+    image: "",
+  });
   const [product, setProduct] = useState({});
   const [loading, setLoading] = useState(true);
 
@@ -44,22 +55,43 @@ const Order = () => {
     setImage({ ...image, myFile: base64 });
   };
 
+  // const handleQuantityChange = (e) => {
+  //   const newQuantity = parseInt(e.target.value, 10);
+  //   const newTotalPrice = (newQuantity * product.price).toFixed(2);
+
+  //   setOrderDetails({
+  //     ...orderDetails,
+  //     quantity: newQuantity,
+  //     totalPrice: newTotalPrice,
+  //   });
+
+  //   setPlaceDetails({
+  //     ...placeDetails,
+  //     productqty: newQuantity,
+  //     totalPrice: newTotalPrice,
+  //   });
+  // };
+
   const handleQuantityChange = (e) => {
     const newQuantity = parseInt(e.target.value, 10);
+
+    // Calculate the new total price based on the product's price and quantity
     const newTotalPrice = (newQuantity * product.price).toFixed(2);
 
-    setOrderDetails({
-      ...orderDetails,
+    // Update orderDetails and placeDetails with the new quantity and total price
+    setOrderDetails((prevOrderDetails) => ({
+      ...prevOrderDetails,
       quantity: newQuantity,
       totalPrice: newTotalPrice,
-    });
+    }));
 
-    setPlaceDetails({
-      ...placeDetails,
+    setPlaceDetails((prevPlaceDetails) => ({
+      ...prevPlaceDetails,
       productqty: newQuantity,
       totalPrice: newTotalPrice,
-    });
+    }));
   };
+
   useEffect(() => {
     const fetchProduct = async () => {
       try {
@@ -69,25 +101,14 @@ const Order = () => {
 
         setProduct(response.data);
 
-        // Initialize placeDetails after fetching product data
-        const placeDetails = {
-          username: user ? user.fname : "Guest",
-          name: "",
-          addres: "",
-          phoneno: "",
-          productid: id,
+        // Update placeDetails with product information
+        setPlaceDetails((prevDetails) => ({
+          ...prevDetails,
           producttitle: response.data.title,
-          productqty: orderDetails.quantity,
-          totalPrice: (response.data.price * orderDetails.quantity).toFixed(2),
-          date: formattedDate,
           image: response.data.image,
-        };
-
-        setPlaceDetails(placeDetails);
-        setOrderDetails((prevOrderDetails) => ({
-          ...prevOrderDetails,
-          totalPrice: response.data.price,
+          totalPrice: (response.data.price * orderDetails.quantity).toFixed(2),
         }));
+
         setLoading(false);
       } catch (error) {
         console.error(error);
@@ -95,14 +116,7 @@ const Order = () => {
     };
 
     fetchProduct();
-  }, [
-    id,
-    user,
-    orderDetails.quantity,
-    formattedDate,
-    setPlaceDetails,
-    setOrderDetails,
-  ]);
+  }, [id, orderDetails.quantity, setPlaceDetails, setLoading]);
 
   useEffect(() => {
     if (product.price !== undefined) {
@@ -114,12 +128,68 @@ const Order = () => {
     }
   }, [orderDetails.quantity, product.price]);
 
+  // const handleFormSubmit = async (e) => {
+  //   e.preventDefault();
+
+  //   try {
+  //     await axios.post(`http://localhost:9000/api/v1/order`, placeDetails);
+  //     console.log("ddd", placeDetails);
+  //     alert("Success");
+  //     navigate("/");
+  //   } catch (error) {
+  //     console.error("Error submitting form:", error);
+  //     alert("An error occurred while submitting the form.");
+  //   }
+  // };
+
+  const validateForm = () => {
+    const errors = {};
+
+    if (!placeDetails.username) {
+      errors.username = "Username is required";
+    }
+    if (!placeDetails.name) {
+      errors.name = "Name is required";
+    }
+    if (!placeDetails.addres) {
+      errors.addres = "Address is required";
+    }
+    if (!placeDetails.phoneno) {
+      errors.phoneno = "Phone number is required";
+    }
+    if (!placeDetails.productqty || placeDetails.productqty < 1) {
+      errors.productqty = "Quantity should be at least 1";
+    }
+
+    if (
+      !placeDetails.username &&
+      !placeDetails.name &&
+      !placeDetails.addres &&
+      !placeDetails.phoneno &&
+      (!placeDetails.productqty || placeDetails.productqty < 1)
+    ) {
+      alert("Please fill in at least one field");
+    }
+
+    return errors;
+  };
+
   const handleFormSubmit = async (e) => {
     e.preventDefault();
 
+    const errors = validateForm();
+
+    if (Object.keys(errors).length > 0) {
+      if (errors.username) alert(errors.username);
+      if (errors.name) alert(errors.name);
+      if (errors.addres) alert(errors.addres);
+      if (errors.phoneno) alert(errors.phoneno);
+      if (errors.productqty) alert(errors.productqty);
+      return;
+    }
+
     try {
       await axios.post(`http://localhost:9000/api/v1/order`, placeDetails);
-      console.log("ddd", placeDetails);
       alert("Success");
       navigate("/");
     } catch (error) {
@@ -127,7 +197,7 @@ const Order = () => {
       alert("An error occurred while submitting the form.");
     }
   };
-
+  
   if (loading) {
     return <p>Loading...</p>;
   }
@@ -230,11 +300,10 @@ const Order = () => {
             borderBottom: "10px solid #f2f2f2",
             marginBottom: "20px",
             width: "100%",
-          }} >
+          }}
+        ></div>
 
-        </div>
-
-        <div className="productde" style={{display:"flex"}}>
+        <div className="productde" style={{ display: "flex" }}>
           <h6
             style={{
               color: "green",
@@ -249,57 +318,59 @@ const Order = () => {
           </h6>
         </div>
         <div className="oder">
-        <img
-          src={product.image}
-          alt={product.title} // Provide a meaningful description here
-          className="img1"
-          type="file"
-          label="Image"
-          name="myFile"
-          id="file-upload"
-          accept=".jpeg, .png, .jpg"
-          onChange={(e) => handleFileUpload(e)}
-        />
-        <h5
-          className="title1"
-          onChange={(e) =>
-            setPlaceDetails({
-              ...placeDetails,
-              [e.target.name]: e.target.value,
-            })
-          }
-        >
-          {product.title}
-        </h5>
-        <div className="price1">
-          <div
-            style={{
-              color: "black",
-              fontSize: "1.2rem",
-              fontWeight: "bold",
-              marginTop: "-4px",
-            }}
-          >
-            Price:$
-          </div>
-          <h5> {product.price}</h5>
-        </div>
-
-        <div className="rating1"
-        
-        >
-          <h1
-            style={{ fontSize: "1.2rem", fontWeight: "bold", marginTop: "5px" }}
-          >
-            Rating:
-          </h1>
-          <Rating
-            count={5}
-            value={product.rating.rate}
-            size={24}
-            activeColor="green"
+          <img
+            src={product.image}
+            alt={product.title} // Provide a meaningful description here
+            className="img1"
+            type="file"
+            label="Image"
+            name="myFile"
+            id="file-upload"
+            accept=".jpeg, .png, .jpg"
+            onChange={(e) => handleFileUpload(e)}
           />
-        </div>
+          <h5
+            className="title1"
+            onChange={(e) =>
+              setPlaceDetails({
+                ...placeDetails,
+                [e.target.name]: e.target.value,
+              })
+            }
+          >
+            {product.title}
+          </h5>
+          <div className="price1">
+            <div
+              style={{
+                color: "black",
+                fontSize: "1.2rem",
+                fontWeight: "bold",
+                marginTop: "-4px",
+              }}
+            >
+              Price:$
+            </div>
+            <h5> {product.price}</h5>
+          </div>
+
+          <div className="rating1">
+            <h1
+              style={{
+                fontSize: "1.2rem",
+                fontWeight: "bold",
+                marginTop: "5px",
+              }}
+            >
+              Rating:
+            </h1>
+            <Rating
+              count={5}
+              value={product.rating.rate}
+              size={24}
+              activeColor="green"
+            />
+          </div>
         </div>
         <div className="qty">
           <label style={{ marginLeft: "20px", marginRight: "40px" }}>
@@ -315,6 +386,7 @@ const Order = () => {
               value={orderDetails.quantity}
               onChange={handleQuantityChange}
               min="1"
+              name="quantity"
             />
           </label>
           <label>
@@ -326,9 +398,10 @@ const Order = () => {
                 width: "80px",
                 borderRadius: "5px",
               }}
-              type="text" // Use type "text" to display total price
-              value={orderDetails.totalPrice} // Display total price from orderDetails
+              type="text"
+              value={orderDetails.totalPrice}
               id="totalPrice"
+              readOnly
             />
           </label>
         </div>
@@ -341,29 +414,29 @@ const Order = () => {
             marginTop: "20px",
           }}
         >
-          <div className="delivery" >
-          <div style={{ display: "flex", width: "180px" }}>
-            <label>Delivery by: </label>
-            <h2
-              style={{ marginTop: "3px" }}
-              onChange={(e) =>
-                setPlaceDetails({
-                  ...placeDetails,
-                  [e.target.name]: e.target.value,
-                })
-              }
-            >
-              {DeliveryDate}
-            </h2>
-            <div
-              style={{
-                borderBottom: "25px solid #000",
-                width: "1%",
-                marginLeft: "10px",
-              }}
-            ></div>
+          <div className="delivery">
+            <div style={{ display: "flex", width: "180px" }}>
+              <label>Delivery by: </label>
+              <h2
+                style={{ marginTop: "3px" }}
+                onChange={(e) =>
+                  setPlaceDetails({
+                    ...placeDetails,
+                    [e.target.name]: e.target.value,
+                  })
+                }
+              >
+                {DeliveryDate}
+              </h2>
+              <div
+                style={{
+                  borderBottom: "25px solid #000",
+                  width: "1%",
+                  marginLeft: "10px",
+                }}
+              ></div>
 
-            {/* <input
+              {/* <input
               name="date"
               value={DeliveryDate}
               onChange={(e) =>
@@ -375,14 +448,14 @@ const Order = () => {
               className="form-control"
               id="date"
             /> */}
+            </div>
+            <div style={{ display: "flex", marginLeft: "10px" }}>
+              <label style={{ textDecoration: "line-through" }}> $40</label>
+              <label style={{ color: "green", marginLeft: "10px" }}>
+                Free Delivery
+              </label>
+            </div>
           </div>
-          <div style={{ display: "flex", marginLeft: "10px" }}>
-            <label style={{ textDecoration: "line-through" }}> $40</label>
-            <label style={{ color: "green", marginLeft: "10px" }}>
-              Free Delivery
-            </label>
-          </div>
-        </div>
         </div>
         <div
           style={{
@@ -391,12 +464,10 @@ const Order = () => {
             alignItems: "center",
           }}
         >
-         
           <button type="submit" className="placeorder">
             Place Order
           </button>
         </div>
-       
       </form>
     </div>
   );
