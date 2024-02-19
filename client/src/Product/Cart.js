@@ -130,6 +130,7 @@ const Cart = () => {
   return (
     <>
       <Navbar />
+      <div style={{textAlign:"center"}}>MY CART</div>
       {state && state.length !== 0 && state.map(cartItems)}
       {state && state.length !== 0 && buttons()}
     </>

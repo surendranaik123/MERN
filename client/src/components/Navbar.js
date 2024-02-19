@@ -53,11 +53,23 @@ function Navbar() {
     setShowProfileMenu(false);
   };
   console.log(showProfileMenu);
+
+  const [addMargin, setAddMargin] = useState(false);
+
+  const handleClick = () => {
+    setAddMargin(!addMargin); // Toggle the state to add/remove margin
+  };
+
+
+
   return (
     <div>
-      <nav>
+      <nav  style={{
+          marginBottom: addMargin ? "350px" : "0px",
+          backgroundColor: "lightgray",
+        }}>
         <input type="checkbox" id="check" />
-        <label htmlFor="check" className="checkbtn">
+        <label htmlFor="check" className="checkbtn" onClick={handleClick}>
           <FontAwesomeIcon icon={faBars} />
         </label>
         <label style={{ display: "flex" }}>
