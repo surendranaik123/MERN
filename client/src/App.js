@@ -71,13 +71,10 @@ const App = () => {
           <Route path="/footer" element={<Footer/>} /> 
           <Route path='/about' element={<About/>}/>
           <Route path='/contact' element={<Contact/>}/>
-
           <Route path='*' element={<div>Page Not Found!</div>}/>
-       
           <Route path='/register' element={<Register/>}/>
           <Route path='/login' element={<LoginCom/>}/>
           <Route path='/userdetail' element={<DashboardUser/>}/>
-
           <Route path='/dashboard' element={<DashBoard/>}/>
           <Route path='/productadmin' element={<Productadmin/>}/>
           <Route path='/header' element={<Header/>}/>
