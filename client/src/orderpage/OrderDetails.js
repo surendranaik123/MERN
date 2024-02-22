@@ -15,7 +15,7 @@ console.log(error);
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:9000/api/v1/orders');
+        const response = await axios.get('https://mern-0ycy.onrender.com/api/v1/orders');
         setData(response.data);
       } catch (error) {
         console.error('Error fetching data:', error);
@@ -31,7 +31,7 @@ console.log(error);
   //   e.preventDefault();
 
   //   try {
-  //     const response = await axios.get(`http://localhost:9000/api/v1/orders/name?name=${searchedName}`);
+  //     const response = await axios.get(`https://mern-0ycy.onrender.com/api/v1/orders/name?name=${searchedName}`);
   //     setSearchResult(response.data);
 
   //     if (!searchedName) {

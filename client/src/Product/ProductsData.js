@@ -11,7 +11,7 @@
 //   const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
 //   useEffect(() => {
 //     axios
-//       .get("http://localhost:9000/api/v1/productdata")
+//       .get("https://mern-0ycy.onrender.com/api/v1/productdata")
 //       .then((res) => {
 //         console.log("Data fetched successfully:", res.data);
 //         setData(res.data);
@@ -165,7 +165,7 @@ export default function ProductsData() {
   useEffect(() => {
     // Fetch product data from API
     axios
-      .get("http://localhost:9000/api/v1/productdata")
+      .get("https://mern-0ycy.onrender.com/api/v1/productdata")
       .then((res) => {
         console.log("API Response:", res.data);
         // Shuffle the data randomly
@@ -180,7 +180,7 @@ export default function ProductsData() {
     // Only fetch user data if id is available
     if (id) {
       axios
-        .get(`http://localhost:9000/api/v1/users/single/${id}`)
+        .get(`https://mern-0ycy.onrender.com/api/v1/users/single/${id}`)
         .then((res) => {
           setUser(res.data);
         })

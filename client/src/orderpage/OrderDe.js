@@ -24,12 +24,12 @@ console.log(data,setSuccess);
         if (userNameFromQuery) {
           // Fetch order details based on the username query parameter
           const response = await axios.get(
-            `http://localhost:9000/api/v1/orders/name?name=${userNameFromQuery}`
+            `https://mern-0ycy.onrender.com/api/v1/orders/name?name=${userNameFromQuery}`
           );
           setSearchResult(response.data);
         } else {
           // Fetch all orders if no username is provided
-          const response = await axios.get('http://localhost:9000/api/v1/orders');
+          const response = await axios.get('https://mern-0ycy.onrender.com/api/v1/orders');
           setData(response.data);
         }
       } catch (error) {

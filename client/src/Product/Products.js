@@ -85,7 +85,7 @@ const Products = () => {
   
     // Only fetch user data if id is available
     if (id) {
-      axios.get(`http://localhost:9000/api/v1/users/single/${id}`)
+      axios.get(`https://mern-0ycy.onrender.com/api/v1/users/single/${id}`)
         .then((res) => {
           setUser(res.data);
         })

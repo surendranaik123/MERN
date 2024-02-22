@@ -68,7 +68,7 @@ const UserReg = () => {
     ) {
       try {
         // Perform form submission logic here
-        await axios.post("http://localhost:9000/api/v1/usercreate", input);
+        await axios.post("https://mern-0ycy.onrender.com/api/v1/usercreate", input);
 
         setInput({
           name: "",

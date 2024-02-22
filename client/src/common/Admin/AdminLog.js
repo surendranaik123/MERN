@@ -16,7 +16,7 @@ export const AdminLogAuth = () => {
   useEffect(() => {
     const getAllData = async () => {
       try {
-        const res = await axios.get("http://localhost:9000/api/v1/adm");
+        const res = await axios.get("https://mern-0ycy.onrender.com/api/v1/adm");
         setData(res.data);
       } catch (error) {
         console.error("Error fetching data:", error);

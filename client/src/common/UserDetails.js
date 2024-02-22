@@ -7,7 +7,7 @@
 //   const [data, setData] = useState(null);
 
 //   useEffect(() => {
-//     axios.get("http://localhost:9000/api/v1/userdetails")
+//     axios.get("https://mern-0ycy.onrender.com/api/v1/userdetails")
 //       .then((res) => {
 //         console.log("Data fetched successfully:", res.data);
 //         setData(res.data);
@@ -48,7 +48,7 @@ import { Link } from 'react-router-dom';
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("http://localhost:9000/api/v1/users");
+        const response = await axios.get("https://mern-0ycy.onrender.com/api/v1/users");
         setUsers(response.data);
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -61,7 +61,7 @@ import { Link } from 'react-router-dom';
   const handleDelete = async (id) => {
     try {
       console.log("Deleting user with ID:", id);
-      await axios.delete(`http://localhost:9000/api/v1/users/${id}`);
+      await axios.delete(`https://mern-0ycy.onrender.com/api/v1/users/${id}`);
       setUsers((prevUsers) => prevUsers.filter((user) => user._id !== id));
       alert("Deleted user");
     } catch (error) {

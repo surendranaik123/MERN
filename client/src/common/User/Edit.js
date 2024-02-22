@@ -17,7 +17,7 @@ const Edit = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:9000/api/v1/users/single/${id}`
+          `https://mern-0ycy.onrender.com/api/v1/users/single/${id}`
         );
         setInput(response.data);
       } catch (error) {
@@ -30,7 +30,7 @@ const Edit = () => {
   const handleEditData = async (e) => {
     e.preventDefault();
     try {
-      await axios.put(`http://localhost:9000/api/v1/users/${id}`, input);
+      await axios.put(`https://mern-0ycy.onrender.com/api/v1/users/${id}`, input);
       navigate("/fetch");
     } catch (error) {
       console.error("Error updating data:", error);

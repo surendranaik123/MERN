@@ -39,7 +39,7 @@ const Landing = () => {
   console.log(product, Loading);
   useEffect(() => {
     axios
-      .get("http://localhost:9000/api/v1/productdata")
+      .get("https://mern-0ycy.onrender.com/api/v1/productdata")
       .then((res) => {
         console.log("API Response:", res.data);
         setProduct(res.data);

@@ -6,7 +6,7 @@ export const Details = () => {
   const [data,setData]=useState(null)
   console.log(data);
   useEffect(() => {
-    axios.post("http://localhost:9000/api/v1/userdetails")
+    axios.post("https://mern-0ycy.onrender.com/api/v1/userdetails")
         .then((res) => {
             console.log("Data fetched successfully:", res.data);
             setData(res.data);

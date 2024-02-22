@@ -8,7 +8,7 @@ export const FetchData = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("http://localhost:9000/api/v1/users");
+        const response = await axios.get("https://mern-0ycy.onrender.com/api/v1/users");
         setUsers(response.data);
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -21,7 +21,7 @@ export const FetchData = () => {
   const handleDelete = async (id) => {
     try {
       console.log("Deleting user with ID:", id);
-      await axios.delete(`http://localhost:9000/api/v1/users/${id}`);
+      await axios.delete(`https://mern-0ycy.onrender.com/api/v1/users/${id}`);
       setUsers((prevUsers) => prevUsers.filter((user) => user._id !== id));
       alert("Deleted user");
     } catch (error) {

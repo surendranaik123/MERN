@@ -132,7 +132,7 @@ const Order = () => {
   //   e.preventDefault();
 
   //   try {
-  //     await axios.post(`http://localhost:9000/api/v1/order`, placeDetails);
+  //     await axios.post(`https://mern-0ycy.onrender.com/api/v1/order`, placeDetails);
   //     console.log("ddd", placeDetails);
   //     alert("Success");
   //     navigate("/");
@@ -189,7 +189,7 @@ const Order = () => {
     }
 
     try {
-      await axios.post(`http://localhost:9000/api/v1/order`, placeDetails);
+      await axios.post(`https://mern-0ycy.onrender.com/api/v1/order`, placeDetails);
       alert("Success");
       navigate("/");
     } catch (error) {

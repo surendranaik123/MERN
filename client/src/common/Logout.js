@@ -8,7 +8,7 @@ const Logout = () => {
 
   const handleLogout = async () => {
     try {
-      await axios.post('http://localhost:9000/api/v1/logout'); // Adjust the URL as needed
+      await axios.post('https://mern-0ycy.onrender.com/api/v1/logout'); // Adjust the URL as needed
       dispatch({ type: 'USER', payload: false });// Clear user context
     } catch (error) {
       console.error('Logout error:', error);

@@ -22,7 +22,7 @@ useEffect(() => {
     const getProduct = async () => {
       try {
         setLoading(true);
-        const response = await fetch(`http://localhost:9000/api/v1/productdata/${id}`);
+        const response = await fetch(`https://mern-0ycy.onrender.com/api/v1/productdata/${id}`);
   
         if (!response.ok) {
           throw new Error(`HTTP error! Status: ${response.status}`);

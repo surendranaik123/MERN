@@ -45,7 +45,7 @@ const Admin = () => {
     if (input.name && input.email && input.password && input.name.length >= 3 && /(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@#$%^&*()_+[\]{};':"\\|,.<>/?])/.test(input.password)) {
       try {
         // Perform form submission logic here
-        await axios.post("http://localhost:9000/api/v1/adm", input);
+        await axios.post("https://mern-0ycy.onrender.com/api/v1/adm", input);
 
         setInput({
           name: "",

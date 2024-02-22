@@ -23,7 +23,7 @@ export default function Register() {
       alert("Please fill in all required fields.");
     } else {
       console.log(fname, lname, phoneno, address, email, password, userType);
-      fetch("http://localhost:9000/api/v1/common", {
+      fetch("https://mern-0ycy.onrender.com/api/v1/common", {
         method: "POST",
         crossDomain: true,
         headers: {
