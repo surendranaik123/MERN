@@ -6,17 +6,7 @@ import '../../css/contact.css'
 export default function DashboardUser() {
     const [data,setData]=useState(null)
     console.log(data);
-  //   useEffect(() => {
-  //     axios.get("https://mern-0ycy.onrender.com/api/v1/userdetails")
-  //         .then((res) => {
-  //             console.log("Data fetched successfully:", res.data);
-  //             setData(res.data);
-  //         })
-  //         .catch((error) => {
-  //             console.error("Error fetching data:", error);
-  //         });
-  // }, []);
-
+ 
   useEffect(() => {
     axios.get("https://mern-0ycy.onrender.com/api/v1/userdetails")
         .then((res) => {
