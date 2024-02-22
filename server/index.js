@@ -22,7 +22,7 @@ app.use(express.json());
 // Apply middleware
 app.use(cors(
   {
-    origin:[],
+    origin:["https://website-delta-two-63.vercel.app"],
     methods:["Post","Get"],
     credentials:true 
 
