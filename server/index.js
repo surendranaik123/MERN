@@ -20,13 +20,7 @@ app.use(express.json());
 // app.use(cors());
 
 // Apply middleware
-app.use(cors(
-  {
-    origin:["https://website-delta-two-63.vercel.app"],
-    methods:["Post","Get"],
-    credentials:true 
-
-}));
+app.use(cors());
 
 app.use(express.json({ limit: '10mb' }));
 
