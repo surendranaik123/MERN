@@ -22,7 +22,7 @@ router.get("/users/single/:id", userController.getSingleUser);
 
 router.post("/common", CommonDetailsController.createDetails);
 router.post("/login_common", CommonDetailsController.LoginData);
- router.post("/userdetails", CommonDetailsController.getAllUsers);
+ router.get("/userdetails", CommonDetailsController.getAllUsers);
 
 //admindata
 router.get("/adm", admController.getAlladm);
