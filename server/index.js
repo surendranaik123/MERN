@@ -20,7 +20,14 @@ app.use(express.json());
 // app.use(cors());
 
 // Apply middleware
-app.use(cors());
+app.use(cors(
+  {
+    origin:[],
+    methods:["Post","Get"],
+    credentials:true 
+
+}));
+
 app.use(express.json({ limit: '10mb' }));
 
 
