@@ -33,8 +33,9 @@ const Landing = () => {
 
   console.log(data);
   const [product, setProduct] = useState([]);
-
   const [Loading, setLoading] = useState(true);
+
+  const [searchProduct, setSearchProduct] = useState([]);
 
   console.log(product, Loading);
   useEffect(() => {
@@ -153,9 +154,20 @@ const Landing = () => {
   };
 
   const onSearch = (cat) => {
-    setSearchCategory(cat);
-    setCurrentPage(0); // Reset to the first page when applying filter
+    // Check if any product matches the searched category
+    const isProductAvailable = data.some(item => item.category === cat);
+  
+    if (!isProductAvailable) {
+      setSearchProduct("Product is not Available");
+      setSearchCategory(""); // Reset search category
+    } else {
+      setSearchProduct("");
+      setSearchCategory(cat);
+    }
+  
+    setCurrentPage(0); // Reset to first page when applying filter
   };
+  
   const handlePageClick = ({ selected }) => {
     setCurrentPage(selected);
   };
@@ -337,7 +349,7 @@ const Landing = () => {
             enterButton
           />
         </div>
-
+        {searchProduct && <h1 className="text-danger" style={{marginLeft:"85px",fontSize:"1.3erm"}}>{searchProduct}</h1>}
         <Carousel autoplay style={{ backgroundColor: "none" }}>
           <div>
             <div className="dis">
@@ -539,7 +551,7 @@ const Landing = () => {
           <div class="countdown-title mb-4 ml-5">
             <h1 className="heading1">WOO! Flash Sale</h1>
             <p className="para1">
-              You get into the 2k+ best Products in Flash offer with a
+              You get into the 2k+ best Products in Flash offer with a<br></br>
               special-shaped sofa for sale.
             </p>
           </div>
