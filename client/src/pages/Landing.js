@@ -293,7 +293,7 @@ const Landing = () => {
               margin: "20px",
             }}
           >
-            {data.slice(0, productsToShow).map((product) => (
+            {data.slice(0, productsToShow).map ((product) => (
               <div key={product.id} style={{ margin: "10px" }}>
                 <img
                   src={product.image}

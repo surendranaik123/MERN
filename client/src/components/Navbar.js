@@ -10,7 +10,7 @@ import {
   FireOutlined,
 } from "@ant-design/icons";
 import { logout } from "../redux/Reducer/authSlice";
-import img from "../assets/nav_logo.jpg";
+import img from "../assets/sri-removebg-preview.png";
 // import img1 from "../assets/profilepic.svg";
 
 import NavDropdown from "react-bootstrap/NavDropdown";
@@ -58,16 +58,23 @@ function Navbar() {
 
   const handleClick = () => {
     setAddMargin(!addMargin); // Toggle the state to add/remove margin
+  
   };
 
 
 
   return (
     <div>
-      <nav  style={{
-          marginBottom: addMargin ? "350px" : "0px",
-          backgroundColor: "lightgray",
-        }}>
+    
+
+<nav
+        style={{
+          paddingBottom:"auto",
+          marginBottom: addMargin ? "350px" : "0px", // Set to "auto"
+          backgroundColor: "",
+          
+        }}
+      >
         <input type="checkbox" id="check" />
         <label htmlFor="check" className="checkbtn" onClick={handleClick}>
           <FontAwesomeIcon icon={faBars} />
@@ -77,14 +84,11 @@ function Navbar() {
             src={img}
             alt="logo"
             style={{
-              height: "70px",
-              width: "70px",
-              borderRadius: "100px",
-              marginTop: "10px",
-              margin: "10px",
+             marginTop:"-30px",
+             marginBottom:"-35px"
             }}
           />
-          <label className="logo">E-com</label>
+          {/* <label className="logo">Sri Venkateswara</label> */}
         </label>
         <ul className="ul">
           <li

@@ -31,6 +31,8 @@ import ProductStore from "./Product/ProductStore";
 import ProductsData from "./Product/ProductsData";
 import Productdata from "./Product/Productdata";
 import Header from "./pages/Header.js";
+import Portfolio from "./common/Portfolio.js";
+
 
 export const UserContext = React.createContext();
 
@@ -78,6 +80,8 @@ const App = () => {
           <Route path='/dashboard' element={<DashBoard/>}/>
           <Route path='/productadmin' element={<Productadmin/>}/>
           <Route path='/header' element={<Header/>}/>
+
+          <Route path='/portfolio' element={<Portfolio/>}/>
             </Routes>
           </BrowserRouter>
           <Footer />
