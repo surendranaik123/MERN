@@ -32,6 +32,10 @@ import ProductsData from "./Product/ProductsData";
 import Productdata from "./Product/Productdata";
 import Header from "./pages/Header.js";
 import Portfolio from "./common/Portfolio.js";
+import Signup from "./common/Signup.js";
+import Signin from "./common/Signin.js";
+import Home1 from "./pages/Home1.js";
+
 
 
 export const UserContext = React.createContext();
@@ -82,6 +86,10 @@ const App = () => {
           <Route path='/header' element={<Header/>}/>
 
           <Route path='/portfolio' element={<Portfolio/>}/>
+          <Route path='/signuppage' element={<Signup/>}/>
+          <Route path='/signin' element={<Signin/>}/>
+          <Route path='/home1' element={<Home1/>}/>
+         
             </Routes>
           </BrowserRouter>
           <Footer />

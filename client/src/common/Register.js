@@ -66,8 +66,9 @@ export default function Register() {
   return (
     <>
       <Navbar />
-      <div className=" g-8 flex h-full flex-wrap items-center justify-center lg:justify-between  mt-1 mb-20 ml-9">
-        <div className="log flex-1 flex flex-col justify-center py-12 px-4 sm:px-6 lg:flex-none lg:px-20 xl:px-24">
+      <div className=" g-8 flex h-full flex-wrap items-center justify-center lg:justify-between  mt-1 mb-20 ml-16" style={{marginLeft:"30px"}} >
+        <div className="log flex-1 flex flex-col justify-center py-12 px-4 sm:px-6 lg:flex-none lg:px-20 xl:px-24" 
+        style={{boxShadow:"0 4px 8px rgba(0, 0, 0, 0.1)",width:"550px",height:"700px",marginTop:"30px"}}>
           <div className="mx-auto w-full max-w-sm lg:w-96 mt-2">
             <div>
               <h2

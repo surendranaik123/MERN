@@ -1,0 +1,153 @@
+/* 
+    
+.dis{
+    display: flex;
+    }
+    .para {
+        background-color: lightgray;
+        height: 35px;
+        width: 100px;
+        border-radius: 2px;
+        margin-top: 20px;
+        padding: 5px;
+        padding-left: 9px;
+       margin-left:440px;
+    }
+    .heading{
+        font-size: 3.5rem;
+        font-weight:bold;
+        text-align: center;
+        width: 100%;
+        font-family: 'Sansation';
+       font-style: normal;
+        font-weight: 400;
+        text-align: center;
+        margin-top: 30px;
+        width: 380px;
+        margin-left: 290px;
+        margin-right: 70px;
+    }
+
+    
+.image-container {
+    position: relative;
+   
+}
+
+.image-container::before {
+    content: "";
+    position: absolute;
+    top:90px;
+   margin-left: 140px;
+    width: 260px;
+    height: 250px; 
+   border:6px solid white;
+}
+
+.home_img {
+    height: 380px;
+    width: 300px;
+    transition: transform 0.3s ease;
+    z-index: 0;
+}
+.image-container:hover .home_img {
+    transform: scale(1.1); 
+}
+
+
+
+.icons{
+    color: black;
+    margin-top: -24px;
+    font-size: 1.8rem;
+    margin-right: 7px;
+}
+
+.btn_shopnow{
+    margin-left: 400px;
+    margin-top: 40px;
+width: 158px;
+height: 50px;
+background: #FFFFFF;
+border: 3px solid #13AE5C;
+box-shadow: 0px 6px 0px #13AE5C;
+border-radius: 20px;
+font-family: 'Sansation';
+font-style: normal;
+font-weight: bold;
+font-size: 20px;
+
+} 
+
+
+
+  .land_bg {
+    width: 100%;
+    overflow: hidden;
+    height: 530px;
+     background-image: url("C:\Users\Gokul\Desktop\Trained\lens_kt\frontend\src\Assets\landing_bg.png");
+    position: relative;
+    background-repeat: no-repeat;
+    background-position: center;
+  
+    }
+  
+  .slide {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .dis {
+    text-align: center;
+  }
+  
+  .hero {
+    margin-top: 50px;
+  }
+  
+  .para {
+    font-size: 18px;
+    color: #333;
+  }
+  
+  .heading {
+    font-size: 36px;
+    color: #333;
+  }
+  
+  .benefits {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+  }
+  
+  .benefit-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 20px;
+  }
+  
+  .btn_shopnow {
+    margin-top: 40px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .image-container {
+    margin-top: 40px;
+  }
+  
+  .home_img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+
+   */

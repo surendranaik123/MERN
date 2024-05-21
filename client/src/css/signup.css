@@ -1,0 +1,155 @@
+.main_back{
+    position: relative;
+    height: 690px;
+    width: 100%;
+}
+
+.main_back::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color:white;
+    opacity: 0.8;
+    z-index: -1; 
+  }
+  .opacity-image1{
+    background-image: url('../assets/Background1.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.9;
+  }
+  .signup_home1 {
+    
+    background: white;
+    height: 83vh;
+    width: 75%;
+    border-radius: 50px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-y: auto;
+    margin: 0 auto; 
+}
+.img_signup {
+ 
+     width: 476px;
+     height:505px;
+   
+     background-image: url("C:\Users\Gokul\Desktop\Surendra\optical\client\src\assets\signup.png");
+     background-size: cover;
+     background-position: center;
+     background-repeat: no-repeat;
+      }
+
+      .signup_text{
+        position: absolute;
+        width: 476px;
+     height:505px;
+     border-radius: 50px;
+     transform: rotate(-9.49deg);
+     border: 1px solid black;
+     background-color: black;
+     opacity: 0.8;
+     
+      }
+
+      .signup_h3{
+        margin-top: 150px;
+        margin-bottom: 30px;
+        margin-left: 20px;
+        transform: rotate(9.49deg);
+        color: white;
+        font-size: 1.6rem;
+      }
+      .signup_p{
+        
+        transform: rotate(9.49deg);
+        color: white;
+        font-size: .7rem;
+      }
+
+      .signup{  
+        width: 165px;
+        height: 26px;
+        margin-left: 100px;
+        margin-top: -15px;
+        margin-bottom: 20px;
+        font-family: 'Sansation';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 22px;
+        color: #000000;
+        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        
+          }
+
+          .form-control2{
+       
+        width: 350px;
+        height: 34px;
+        background: #F5F5F5;
+        border: 1px solid #000000;
+       border-radius: 7px;
+          }
+         
+          .form-control-contact{
+            border-radius: 7px;
+      
+        width: 220px;
+        height: 38px;
+        background: #F5F5F5;
+        border: 1px solid #000000;
+        
+        padding-left: 10px;
+          }
+          
+          .form-control-contact1{
+            padding-left: 10px;
+            border-radius: 7px;
+            margin-left: 20px;
+            width: 110px;
+            height: 38px;
+            background: #F5F5F5;
+            border: 1px solid #000000;
+         
+              }
+
+              .form-container {
+    
+                width: 60%;
+                margin: 0px;
+              }
+              
+              .form-container form {
+                width: 10%;
+                padding-left: 20%;
+                padding-top: 10px;
+              }
+              
+            
+              
+              .form-group {
+                margin-bottom: 20px;
+              }
+              
+              .form-check-label {
+                font-weight: 400;
+              }
+              
+              .img-container {
+                margin-top: 30px;
+              }
+
+              .signup_btn{
+            
+                border: 2px solid black;
+                padding: 5px;
+                padding-left:20px ;
+                padding-right: 20px;
+                border-radius: 6px;
+              }

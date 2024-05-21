@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+
+.main_back{
+    position: relative;
+    height: 690px;
+    width: 100%;
+}
+
+.main_back::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color:white;
+    opacity: 0.8;
+    z-index: -1; /* Position the overlay behind the content */
+  }
+  .opacity-image{
+    background-image: url('../assets/signin_bg.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.9;
+  }
+  .signin_form{
+box-sizing: border-box;
+position: absolute;
+margin-top: 40px;
+width: 353px;
+height: 450px;
+margin-left: 250px;
+background: rgba(255, 255, 255, 0.1);
+border: 1px solid rgba(0, 0, 0, 0.2);
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+  }
+  .signin_form1{
+    box-sizing: border-box;
+    position: absolute;
+    margin-top: -70px;
+    width: 300px;
+    height: 130px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 30px;
+      }
+    
+
+  .signin_h3{
+    font-family: 'Lobster';
+font-style: normal;
+font-weight: 200;
+font-size: 30px;
+line-height: 62px;
+color: #000000;
+opacity: 0.9;
+text-align: center;
+margin-top: 30px;
+
+  }
+
+.signin_h4{
+  width: 305px;
+height: 187px;
+font-family: 'Lobster';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 37px;
+  line-height: 41px;
+  color: #000000;
+  margin-top: 0px;
+  }
+  .signin_h5 {
+    position: absolute;
+    font-family: 'Limelight';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 37px;
+    text-align: center;
+    color: #000000;
+    width: 100%; ;
+    margin-top: 20px;
+}
+
+  .lable_name{
+font-family: 'Inter';
+font-style: normal;
+font-size: 20px;
+line-height: 24px;
+margin-left:15px ;
+margin-top: 20px;
+color: #000000;
+
+  }
+  .form-control1{
+    margin: 10px;
+    width: 325px;
+    height: 34px;
+background: linear-gradient(88.93deg, rgba(0, 0, 0, 0.1) -1.78%, rgba(0, 224, 255, 0.1) 99.74%);
+   border: none;
+      } 
+      .signin_btn {
+        padding: 4px;
+        padding-left: 20px;
+        padding-right: 20px;
+        border: 1px solid black;
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: 130px;
+        margin-top: 50px;
+      }
+      

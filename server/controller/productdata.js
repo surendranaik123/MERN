@@ -3,32 +3,72 @@ import ProductModel from "../models/products.js"
 
 class ProductController {
  
-    static createProduct= async (req, res) => {
-      const {id, category,image,price,title,description,discount, discountedPrice,date,rating} = req.body;
+    // static createProduct= async (req, res) => {
+    //   const {id, category,image,price,title,description,discount, discountedPrice,date,rating} = req.body;
     
-      try {
-        const newUser = ProductModel({
-        id,
-        category,
-        image: image.myFile, 
-        price,
-        title,
-        description,
-        discount,
-        discountedPrice,
-        date,
-        rating
+    //   try {
+    //     const newUser = ProductModel({
+    //     id,
+    //     category,
+    //     image: image.myFile, 
+    //     price,
+    //     title,
+    //     description,
+    //     discount,
+    //     discountedPrice,
+    //     date,
+    //     rating
 
-        });
+    //     });
     
-        const savedUser = await newUser.save();
+    //     const savedUser = await newUser.save();
     
-        res.status(201).json(savedUser);
-      } catch (error) {
-        console.error("Error creating user:", error);
-        res.status(400).json({ message: "Failed to create user" });
-      }
-    };
+    //     res.status(201).json(savedUser);
+    //   } catch (error) {
+    //     console.error("Error creating user:", error);
+    //     res.status(400).json({ message: "Failed to create user" });
+    //   }
+    // };
+
+
+    
+static createProduct= async (req, res) => {
+  const {
+    id,
+    category,
+    image,
+    price,
+    title,
+    description,
+    discount,
+    discountedPrice,
+    date,
+    rating,
+  } = req.body;
+
+  try {
+    const newProduct = new ProductModel({
+      id,
+      category,
+      image,
+      price,
+      title,
+      description,
+      discount,
+      discountedPrice,
+      date,
+      rating,
+    });
+
+    const savedProduct = await newProduct.save();
+
+    res.status(201).json(savedProduct);
+  } catch (error) {
+    console.error("Error creating product:", error);
+    res.status(400).json({ message: "Failed to create product" });
+  }
+};
+
 
     static getAllProducts = async (req, res) => {
       try {

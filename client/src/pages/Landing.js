@@ -17,6 +17,14 @@ import "../css/display.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import Navbar from "../components/Navbar";
 import { useSelector } from "react-redux";
+import Slider from "react-slick";
+import { CheckCircleOutlined, ArrowRightOutlined } from "@ant-design/icons";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
+import { motion } from 'framer-motion';
+
 
 const Landing = () => {
   const { Search } = Input;
@@ -181,10 +189,11 @@ const Landing = () => {
                 <div
                   key={product.id}
                   style={{
-                    border: "7px solid white",
+                    border: "2px solid black",
                     margin: "20px",
                     height: "auto",
                     paddingBottom: "20px",
+                    width:"280px"
                   }}
                 >
                   <img
@@ -337,10 +346,128 @@ const Landing = () => {
   const handleProducts = () => {
     navigate("/productdata");
   };
+
+
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 5000
+  };
+
   return (
     <>
       <Navbar />
-      <div style={{ backgroundColor: "#D1EAF0" }}>
+
+      <div className='land_bg'>
+        <Slider {...settings}>
+          <div className="slide">
+            <div className="dis">
+              <div className="hero">
+                <p className="para">Our Benefit</p>
+                <h1 className="heading">
+                  Helping others find a better way
+                </h1>
+
+                <div className="benefits" style={{display:"flex",marginLeft:"300px",marginTop:"20px"}}>
+                  <div className="benefit-item" style={{display:"flex",marginRight:"40px"}}>
+                    <CheckCircleOutlined icon={faBars}  style={{fontSize:"1.4rem",marginRight:"5px"}}/>
+                    <h5>Long Life T-Shirts</h5>
+                  </div>
+                  <div className="benefit-item">
+                    <CheckCircleOutlined icon={faBars}  style={{fontSize:"1.4rem",marginRight:"5px"}}/>
+                    <h5>Created By Nature</h5>
+                  </div>
+                  <div className="benefit-item">
+                    <CheckCircleOutlined icon={faBars}  style={{fontSize:"1.4rem",marginRight:"5px"}}/>
+                    <h5>The Rest Behind</h5>
+                  </div>
+                </div>
+                <div className="btn-container">
+                <button className="btn_shopnow ">
+                  Shop Now <ArrowRightOutlined icon={faBars} />
+                </button>
+                </div>
+              </div>
+              <div className="image-container">
+                <img className="home_img" src={img1} alt="presentation" />
+              </div>
+            </div>
+          </div>
+
+          <div className="slide">
+            <div className="dis">
+              <div className="hero" style={{marginLeft:"30px"}}>
+              <p className="para1">Our products</p>
+              <h1 className="heading1">
+                      They're amazing everywhere you look
+                </h1>
+                <div
+                      style={{
+                        display: "flex",
+                        marginLeft: "48px",
+                        marginTop: "20px",
+                        width: "500px",
+                        marginRight: "250px",
+                        fontSize: "1.4rem",
+                        fontWeight: "bold",
+                        textAlign: "center",
+                      }}
+                    >
+                      We need only one thing , customer’s SATISFACTION
+                    </div>
+
+                    <button className="btn_shopnow">
+                      Shop Now <ArrowRightOutlined icon={faBars} />
+                    </button>
+                    
+              </div>
+              <div className="image-container" style={{marginLeft:"-150px"}}>
+                <img className="home_img" src={img2} alt="presentation" />
+              </div>
+            </div>
+          </div>
+
+           <div className="slide">
+            <div className="dis">
+              <div className="hero">
+              <p className="para2" style={{marginTop:"00px"}}>About us</p>
+              <h1 className="heading1">The Best Collection of Shirts</h1>
+               
+                 <div
+                      style={{
+                        display: "flex",
+                        marginLeft: "100px",
+                        marginTop: "20px",
+                        width: "450px",
+                        marginRight: "250px",
+                      }}
+                    >
+                      fashion style for a long time with some big name companies
+                      behind it. I’ve gotten to watch our videos, interview and
+                      look at all of their cool products in person as well.” At
+                      first, Lott says that the product has been too expensive
+                      but he’s not worried about being left out; “With my budget
+                      now
+                    </div>
+                    <button className="btn_shopnow1">
+                      Shop Now <ArrowRightOutlined icon={faBars} />
+                    </button>
+              </div>
+              <div className="image-container">
+                <img className="home_img" src={img3} alt="presentation" />
+              </div>
+            </div>
+          </div> 
+
+        </Slider>
+      </div>
+      
+
+      {/* <div style={{ backgroundColor: "#D1EAF0" }}>
         <div class="search-container">
           <Search
             className="search"
@@ -408,7 +535,9 @@ const Landing = () => {
             </div>
           </div>
         </Carousel>
-      </div>
+      </div> */}
+
+
 
       <div className="content opacity-image">
         <div style={{ display: "flex", marginLeft: "50px", marginTop: "13px" }}>
@@ -500,11 +629,46 @@ const Landing = () => {
         </div> 
       </div>
 
-   
+      <div style={{display:"flex",height:"400px",paddingTop:"80px",boxShadow:"0 4px 8px rgba(0, 0, 0, 0.1)"}}>
+     <motion.div style={{ marginRight: "20px" }}
+          initial={{ opacity: 0, scale: 0, y: 0 }}
+          whileInView={{ opacity: 1, scale: 1, x: 0 }} 
+          transition={{ duration: 1.0 }}
+        >
+          <p style={{  width: "440px", marginLeft: "30px",boxShadow:"0 4px 8px rgba(0, 0, 0, 0.1)",marginTop:"30px",padding:"15px" }}> Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+             Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+             when an unknown printer took a galley of type and scrambled it to make a type
+              specimen book. It has survived not only five centuries, but also the leap into electronic
+               typesetting, remaining essentially unchanged.</p>
+        </motion.div>
+     
+        <motion.div style={{ marginRight: "20px" }}
+          initial={{ opacity: 0, scale: 0, x: 500 }}
+          whileInView={{ opacity: 1, scale: 1, x: 0 }} 
+          transition={{ duration: 1.0 ,delay:2}}
+        >
+          <img src={img1} alt="img1" style={{ height: "250px", width: "250px", marginLeft: "20px" }} />
+        </motion.div>
+      
+        <motion.div style={{ marginRight: "20px" }}
+          initial={{ opacity: 0, scale: 0, x: 400 }}
+          whileInView={{ opacity: 1, scale: 1, x: 0 }} 
+          transition={{ duration: 1.0 ,delay:4}}
+        >
+          <img src={img2} alt="img2" style={{ height: "250px", width: "250px", marginLeft: "20px" }} />
+        </motion.div>
+        <motion.div style={{ marginRight: "20px" }}
+          initial={{ opacity: 0, scale: 0, x: 150 }}
+          whileInView={{ opacity: 1, scale: 1, x: 0 }} 
+          transition={{ duration: 1.0 ,delay:6}}
+        >
+          <img src={img3} alt="img3" style={{ height: "250px", width: "250px", marginLeft: "20px" }} />
+        </motion.div>
+  </div>
 
       <Product1 />
 
-      <div className="home_back">
+      {/* <div className="home_back">
         <div class="w-full xl:p-12 p-5">
           <div class="countdown-wrapper w-full flex space-x-[23px] mb-10">
             <div className="offer">
@@ -566,7 +730,7 @@ const Landing = () => {
             
           </div>
         </div>
-      </div>
+      </div> */}
 
       <ProductAll data={data} />
     </>

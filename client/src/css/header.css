@@ -23,7 +23,7 @@ label.logo{
 
 nav ul{
   float: right;
-  margin-top: -90px;
+  margin-top: -95px;
 
 
 }
@@ -37,13 +37,10 @@ nav ul li{
 .nav-link {
   position: relative;
   color:black;
-  font-size: 14px;
+  font-size: 13px;
   text-transform: uppercase;
   padding: 4px 4px;
   border-radius: 4px;
-  font-family: Arial, Helvetica, sans-serif;
-  font-style: italic;
- 
 }
 
 button:active,button:hover{
@@ -69,46 +66,46 @@ button:active,button:hover{
 .cartnav{
   height: 40px;
   width: 90px;
-
+ color:white;
  padding: 10px;
  border-radius: 5px;
-
+ background-color:orangered;
  font-size:medium;
 
 }
 .cartnav:hover{
-  color: black;
- border: 2px solid black;
+  color: white;
+  background-color: #0082e6;
 }
 
 .loginnav{
   height: 40px;
   width:90px;
-  color: black;
-  
+  color: white;
+  background-color: green;
   padding: 10px;
  border-radius: 5px;
  font-size:medium;
 
 }
 .loginnav:hover{
-  color: black;
- border: 2px solid black;
+  color: white;
+  background-color: blueviolet;
 }
 
 .ordernav{
   height: 40px;
   width:90px;
-  color: black;
-  
+  color: white;
+  background-color: green;
   padding: 10px;
  border-radius: 5px;
  font-size:medium;
 
 }
 .ordernav:hover{
-  color: black;
- border: 2px solid black;
+  color: white;
+  background-color: blueviolet;
 }
 
 .custom-dropdown-item {
@@ -123,10 +120,9 @@ button:active,button:hover{
           padding: 10px; /* Set your custom padding here */
         }
 @media only screen and (max-width: 952px) {
-
   label.logo{
       
-      font-size: 100x;
+      font-size: 25px;
       padding-left:  -30px;
    
   }
@@ -154,10 +150,9 @@ button:active,button:hover{
   }
 
   .ul{
-    padding-top: 13px;
      padding-left:3px;
       position:absolute ;
-      width: 47%;
+      width: 50%;
       height: 60vh;
       background-color:lightcyan;
       top: 188px;
@@ -196,23 +191,13 @@ button:active,button:hover{
 }
 
 .cartnav{
-  line-height: 45px;
- 
+  line-height: 40px;
 }
 .loginnav{
   line-height: 40px;
 }
 .log{
   margin-left: -35px;
-}
-label.logo{
-  color: blue;
-  font-size: 17px;
-  line-height: 80px;
-  padding: 0 0px;
-  font-weight: bold;
-  margin-top: 12px;
-  margin-left: -10px;
 }
 }
 

@@ -1,23 +1,186 @@
-.dis {
-  display: flex;
+
+.land_bg {
+  width: 100%;
+  overflow: hidden;
+  height: 530px;
+   background-image: url("C:\Users\Gokul\Desktop\Trained\lens_kt\frontend\src\Assets\landing_bg.png");
+  position: relative;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  }
+
+  .dis {
+    display: flex;
+  }
+  
+  .hero {
+    margin-top: 70px;
+   margin-right: 160px;
+   margin-left: -80px;
+    
+  }
+
+  .para {
+    background-color: lightgray;
+    height: 35px;
+    width: 100px;
+    border-radius: 2px;
+    margin-top: 20px;
+    padding: 5px;
+    padding-left: 9px;
+   margin-left:440px;
 }
 
-.hero {
-  margin-top: 70px;
-  height: 400px;
-  width: 650px;
-  padding: 10px;
-  margin-left: 40px;
-  margin-right: 100px;
-  
+.heading{
+  font-size: 3.5rem;
+  font-weight:bold;
+  text-align: center;
+  width: 100%;
+  font-family: 'Sansation';
+ font-style: normal;
+  font-weight: 400;
+  text-align: center;
+  margin-top: 30px;
+  width: 380px;
+  margin-left: 290px;
+  margin-right: 70px;
+}
+
+.btn_shopnow{
+  margin-left: 400px;
+  margin-top: 40px;
+  padding-left: 25px;
+width: 158px;
+height: 50px;
+background: #FFFFFF;
+border: 3px solid #13AE5C;
+box-shadow: 0px 6px 0px #13AE5C;
+border-radius: 20px;
+font-family: 'Sansation';
+font-style: normal;
+font-weight: bold;
+font-size: 20px;
+
+}
+
+
+.image-container {
+  position: relative;
+ 
+}
+
+.image-container::before {
+  content: "";
+  position: absolute;
+  top:90px;
+ margin-left: 20px;
+  width: 260px;
+  height: 360px; 
+ border:6px solid white;
 }
 
 .home_img {
-margin-left: 50px;
-  padding: 45px;
-  height: 570px;
-  width: 500px;
+  margin-top: 80px;
+  height: 380px;
+  width: 300px;
+  transition: transform 0.3s ease;
+  z-index: 0;
 }
+.image-container:hover .home_img {
+  transform: scale(1.1); /* Scale up the image on hover */
+}
+
+
+
+.benefit-item{
+  display: flex;
+  margin-right: 40px;
+  width: 100px;
+}
+
+
+.para1 {
+  background-color: lightgray;
+  height: 35px;
+  width: 120px;
+  border-radius: 2px;
+  margin-top: 30px;
+  padding: 5px;
+  padding-left: 9px;
+ margin-left:100px;
+}
+
+.heading1{
+  font-size: 3rem;
+  font-weight:bold;
+  font-family: 'Sansation';
+ font-style: normal;
+  font-weight: 400;
+ 
+  margin-top: 20px;
+  width: 500px;
+  margin-left:100px;
+  margin-right: 200px;
+}
+
+.heading2{
+  font-size: 3rem;
+  font-weight:bold;
+  font-family: 'Sansation';
+ font-style: normal;
+  font-weight: 400;
+ 
+  margin-top: 20px;
+  width: 400px;
+  margin-left:100px;
+  margin-right: 70px;
+}
+.para2 {
+  background-color: lightgray;
+  height: 35px;
+  width: 100px;
+  border-radius: 2px;
+  margin-top: 100px;
+  padding: 5px;
+  padding-left: 9px;
+ margin-left:100px;
+}
+
+.btn_shopnow1{
+  margin-left: 600px;
+  margin-top: -440px;
+  padding-left: 20px;
+width: 158px;
+height: 50px;
+background: #FFFFFF;
+border: 3px solid #13AE5C;
+box-shadow: 0px 6px 0px #13AE5C;
+border-radius: 20px;
+font-family: 'Sansation';
+font-style: normal;
+font-weight: bold;
+font-size: 20px;
+
+}
+
+
+.slider-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 350px;
+}
+
+.slide {
+  margin-right: 30px; /* Adjust spacing between slides */
+}
+
+.slide-image {
+  height: 350px;
+  width: 250px;
+}
+
 
 
 .men {
@@ -83,12 +246,13 @@ margin-left: 50px;
 
 
 .prodduct_img{
-  height: 350px;
-  width: 270px;
+  height: 150px;
+  width: 200px;
   border-radius: 0px;
  border: 5px solid white;
  margin-bottom: 20px;
-
+background-color: white;
+margin-left: 30px;
 
 }
 
@@ -97,7 +261,7 @@ margin-left: 50px;
   display:flex;
   justify-content: center;
   margin-top: 50px;
- 
+
   
  }
 
@@ -159,39 +323,39 @@ margin-bottom: 10px;
 margin-top: 10px;
 font-size: 1.2rem;
 }               
-.para{
+/* .para{
 color:black;
 font-size:2.3rem;
 }
 .para1{
 color:black;
 font-size:1.3rem;
-}
+} */
 
-.heading{
+/* .heading{
 font-size: 3.6rem;
 font-weight: bold;
 margin-top:20px ;
 margin-bottom:30px ;
-}
-.heading1{
+} */
+/* .heading1{
 font-size: 3.6rem;
 font-weight: bold;
 margin-top:20px ;
 margin-bottom:30px ;
-}
+} */
 
 .btn{
 display: flex;
 align-items: center;
 height: 45px;
-width: auto;
+width: auto; 
 padding:5px ;
 border-radius: 5px;
 background-color:"#add8e6";
 border: 2px solid black;
 color: black;
-}
+}ḍḍḍḍḍḍjnbv
 .btn:hover{
 color: black;
 border: 2px solid black;
