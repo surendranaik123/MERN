@@ -53,7 +53,7 @@ export default function ProductStore({ onSubmit }) {
       });
 
       const categoryResponse = await axios.post(
-        "http://localhost:9000/api/v1/productssave",
+        "https://mern-0ycy.onrender.com/api/v1/productssave",
         {
           id,
           category,
