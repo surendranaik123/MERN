@@ -3,7 +3,7 @@
   width: 100%;
   overflow: hidden;
   height: 530px;
-   background-image: url("C:\Users\Gokul\Desktop\Trained\lens_kt\frontend\src\Assets\landing_bg.png");
+   background-image: url("../assets/landing_bg.png");
   position: relative;
   background-repeat: no-repeat;
   background-position: center;
