@@ -13,12 +13,12 @@ body * {
   width: 100%;
 } */
 label.logo{
-  color: blue;
+ 
   font-size: 25px;
   line-height: 80px;
   padding: 0 0px;
   font-weight: bold;
-  margin-top: 12px;
+  margin-top: 7px;
 }
 
 nav ul{
@@ -36,7 +36,7 @@ nav ul li{
 }
 .nav-link {
   position: relative;
-  color:black;
+ 
   font-size: 13px;
   text-transform: uppercase;
   padding: 4px 4px;

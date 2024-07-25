@@ -62,10 +62,11 @@ function Navbar() {
 
 
   return (
-    <div>
+    <div >
        <nav style={{
           marginBottom: addMargin ? "320px" : "0px",
-          backgroundColor:"",
+          backgroundColor:"rgb(105,105,105)",
+          color:"white"
         }}
       >
         <input type="checkbox" id="check" />
