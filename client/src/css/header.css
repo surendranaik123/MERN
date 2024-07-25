@@ -154,7 +154,7 @@ button:active,button:hover{
       position:absolute ;
       width: 50%;
       height: 60vh;
-      background-color:lightcyan;
+      background-color:rgb(105,105,105);
       top: 188px;
       left: -100%;
       text-align: center;
