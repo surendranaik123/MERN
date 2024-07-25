@@ -1,4 +1,3 @@
-// Import necessary modules
 import express from "express";
 import cors from "cors";
 import connectToMongo from "./config/db.js";
@@ -14,11 +13,25 @@ const PORT = process.env.PORT || 9000;
 // Connect to MongoDB
 connectToMongo();
 
+// Define the allowed origins
+const allowedOrigins = [
+  'https://66a1e5e56c7a62a862ee35d5--fantastic-pony-b3b050.netlify.app',
+  'http://localhost:3000' // Add other allowed origins as needed
+];
+
 // Apply middleware for CORS
 app.use(cors({
-  origin: '*', // Allow requests from this origin
-  methods: 'GET,POST,PUT,DELETE', // Allow the specified HTTP methods
-  credentials: true, // Allow sending cookies
+  origin: (origin, callback) => {
+    // Allow requests with no origin (like mobile apps or curl requests)
+    if (!origin) return callback(null, true);
+    if (allowedOrigins.includes(origin)) {
+      return callback(null, true);
+    } else {
+      return callback(new Error('Not allowed by CORS'));
+    }
+  },
+  methods: 'GET,POST,PUT,DELETE',
+  credentials: true,
 }));
 
 // Parse incoming JSON requests with a size limit
