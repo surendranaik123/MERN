@@ -16,7 +16,7 @@ connectToMongo();
 
 // Apply middleware for CORS
 app.use(cors({
-  origin: 'http://localhost:3000', // Allow requests from this origin
+  origin: '*', // Allow requests from this origin
   methods: 'GET,POST,PUT,DELETE', // Allow the specified HTTP methods
   credentials: true, // Allow sending cookies
 }));
