@@ -1,4 +1,3 @@
-
 .land_bg {
   width: 100%;
   overflow: hidden;
@@ -9,18 +8,35 @@
   background-position: center;
 
   }
-
+ 
+  .slider-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 350px;
+  }
+  
+  .slide {
+    margin-right: 30px; /* Adjust spacing between slides */
+  }
+  
+  .slide-image {
+    height: 350px;
+    width: 250px;
+  }
+  
   .dis {
     display: flex;
   }
-  
+
+    
   .hero {
     margin-top: 70px;
    margin-right: 160px;
    margin-left: -80px;
     
   }
-
+  
   .para {
     background-color: lightgray;
     height: 35px;
@@ -47,6 +63,38 @@
   margin-right: 70px;
 }
 
+  .image-container {
+    position: relative;
+   
+  }
+  
+  .image-container::before {
+    content: "";
+    position: absolute;
+    top:90px;
+   margin-left: 20px;
+    width: 260px;
+    height: 360px; 
+   border:6px solid white;
+  }
+  
+.benefits{
+  width: 500px;
+margin-left: 270px;
+ margin-top: 30px;
+ display: flex;
+}
+.benefit-item{
+  display: flex;
+  margin-right: 40px;
+  width: 100px;
+}
+
+.icons{
+  font-size: 1.4erm;
+  margin-right: 5px;
+}
+
 .btn_shopnow{
   margin-left: 400px;
   margin-top: 40px;
@@ -63,155 +111,104 @@ font-weight: bold;
 font-size: 20px;
 
 }
+  .home_img {
+    margin-top: 80px;
+    height: 380px;
+    width: 300px;
+    transition: transform 0.3s ease;
+    z-index: 0;
+  }
+  .image-container:hover .home_img {
+    transform: scale(1.1); 
+  }
 
 
-.image-container {
-  position: relative;
+  .para1 {
+    background-color: lightgray;
+    height: 35px;
+    width: 120px;
+    border-radius: 2px;
+    margin-top: 30px;
+    padding: 5px;
+    padding-left: 9px;
+   margin-left:100px;
+  }
+  
+  .heading1{
+    font-size: 3rem;
+    font-weight:bold;
+    font-family: 'Sansation';
+   font-style: normal;
+    font-weight: 400;
+   
+    margin-top: 20px;
+    width: 500px;
+    margin-left:100px;
+    margin-right: 200px;
+  }
+
+  .text{
+    font-size: 1.3rem;
+    margin-left: 100px;
+    margin-top: 10px;
+    width: 400px;
+  }
  
-}
-
-.image-container::before {
-  content: "";
-  position: absolute;
-  top:90px;
- margin-left: 20px;
-  width: 260px;
-  height: 360px; 
- border:6px solid white;
-}
-
-.home_img {
-  margin-top: 80px;
-  height: 380px;
-  width: 300px;
-  transition: transform 0.3s ease;
-  z-index: 0;
-}
-.image-container:hover .home_img {
-  transform: scale(1.1); /* Scale up the image on hover */
-}
-
-
-
-.benefit-item{
-  display: flex;
-  margin-right: 40px;
-  width: 100px;
-}
-
-
-.para1 {
-  background-color: lightgray;
-  height: 35px;
-  width: 120px;
-  border-radius: 2px;
-  margin-top: 30px;
-  padding: 5px;
-  padding-left: 9px;
- margin-left:100px;
-}
-
-.heading1{
-  font-size: 3rem;
-  font-weight:bold;
+  .home_img1 {
+    margin-top: 80px;
+    height: 380px;
+    width: 300px;
+    transition: transform 0.3s ease;
+    z-index: 0;
+  }
+  .heading2{
+    font-size: 3rem;
+    font-weight:bold;
+    font-family: 'Sansation';
+   font-style: normal;
+    font-weight: 400;
+   
+    margin-top: 20px;
+    width: 400px;
+    margin-left:100px;
+    margin-right: 70px;
+  }
+  .para2 {
+    background-color: lightgray;
+    height: 35px;
+    width: 100px;
+    border-radius: 2px;
+    margin-top: 100px;
+    padding: 5px;
+    padding-left: 9px;
+   margin-left:100px;
+  }
+  
+  .btn_shopnow1{
+    margin-left: 600px;
+    margin-top: -440px;
+    padding-left: 20px;
+  width: 158px;
+  height: 50px;
+  background: #FFFFFF;
+  border: 3px solid #13AE5C;
+  box-shadow: 0px 6px 0px #13AE5C;
+  border-radius: 20px;
   font-family: 'Sansation';
- font-style: normal;
-  font-weight: 400;
- 
-  margin-top: 20px;
-  width: 500px;
-  margin-left:100px;
-  margin-right: 200px;
-}
-
-.heading2{
-  font-size: 3rem;
-  font-weight:bold;
-  font-family: 'Sansation';
- font-style: normal;
-  font-weight: 400;
- 
-  margin-top: 20px;
-  width: 400px;
-  margin-left:100px;
-  margin-right: 70px;
-}
-.para2 {
-  background-color: lightgray;
-  height: 35px;
-  width: 100px;
-  border-radius: 2px;
-  margin-top: 100px;
-  padding: 5px;
-  padding-left: 9px;
- margin-left:100px;
-}
-
-.btn_shopnow1{
-  margin-left: 600px;
-  margin-top: -440px;
-  padding-left: 20px;
-width: 158px;
-height: 50px;
-background: #FFFFFF;
-border: 3px solid #13AE5C;
-box-shadow: 0px 6px 0px #13AE5C;
-border-radius: 20px;
-font-family: 'Sansation';
-font-style: normal;
-font-weight: bold;
-font-size: 20px;
-
-}
-
-
-.slider-container {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  
+  }
+.text1{
   display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 350px;
-}
+  margin-left:100px;
+  margin-top:20px ;
+  width: 450px;
+  margin-right: 250px;
 
-.slide {
-  margin-right: 30px; /* Adjust spacing between slides */
-}
+}  
 
-.slide-image {
-  height: 350px;
-  width: 250px;
-}
-
-
-
-.men {
-  margin: 50px;
-  padding: 70px;
-  padding-top: 80px;
-  height: 200px;
-  width: 240px;
-  border: 2px solid black;
-  border-radius: 10px;
-  background-image: url("../assets/mensclothes.jpg");
-  background-size: 125%;
-  background-repeat: no-repeat;
- 
- 
-
-}
-
-.home_btn{
-  margin-left: -10px;
-  padding: 6px;
- height: 38px;
- width:115px;
-  border-radius: 5px;
-  background-color:bisque;
-}
-.home_btn:hover{
-  background-color: blue;
-  color: white;
-  border: 2px solid white;
-}
 
 .content {
   position: relative;
@@ -243,7 +240,6 @@ font-size: 20px;
   background-repeat: no-repeat;
   opacity: 0.9;
 }
-
 
 .prodduct_img{
   height: 150px;
@@ -322,165 +318,225 @@ margin-left: 20px;
 margin-bottom: 10px;
 margin-top: 10px;
 font-size: 1.2rem;
-}               
-/* .para{
-color:black;
-font-size:2.3rem;
-}
-.para1{
-color:black;
-font-size:1.3rem;
-} */
-
-/* .heading{
-font-size: 3.6rem;
-font-weight: bold;
-margin-top:20px ;
-margin-bottom:30px ;
-} */
-/* .heading1{
-font-size: 3.6rem;
-font-weight: bold;
-margin-top:20px ;
-margin-bottom:30px ;
-} */
-
-.btn{
-display: flex;
-align-items: center;
-height: 45px;
-width: auto; 
-padding:5px ;
-border-radius: 5px;
-background-color:"#add8e6";
-border: 2px solid black;
-color: black;
-}ḍḍḍḍḍḍjnbv
-.btn:hover{
-color: black;
-border: 2px solid black;
-}
-.search-container {
-display: flex;
-justify-content: center;
-align-items: center;
-
-}
-
-.search {
-width: 550px;
-background-color: blue;
-margin-top: 40px;
-margin-bottom: 10px;
-}
-.arrived{
-margin-left: 1080px;
-}
-
-.shopnow{
-width: 140px;
-height: 8px;
-border-bottom: 2px solid #000; 
-margin-left: 15px;
-}
+} 
 
 
-@media only screen and (max-width: 768px) {
-  .text-danger{
-  margin-top: 20px;
-  }
-.dis{
-flex-direction: column;
-
-}
-.hero {
-height: 200px;
-width: 350px;
-padding: 10px;
-margin-left: 0px;
-margin-top: 5px;
-align-items: center;
-
-}
-.heading{
-font-size: 2rem;
-font-weight: bold;
-margin-top:10px ;
-text-align: center;
-margin-left: -15px;
-width: 100%;
-}
-.heading1{
-  font-size: 2rem;
-  font-weight: bold;
-  margin-top:-40px ;
-  margin-left: -60px;
-  width: 100%;
-  }
-.para{
-  font-size:1.3rem;
-  text-align: center;
-  margin-left: -15px;
-}
-.para1{
-  font-size:1.2rem;
-color: black;
-  margin-left: -60px;
-  margin-top: -20px;
-}
-.home_img {
-  margin-top: 40px;
-      padding: 20px;
-      height: 400px;
-      width: 100%;
-      margin-left: -4px;
-      border-radius: 1px;
-  }
-  .btn-container {
-    display: flex;
-    justify-content: center;
-  }
-  
-  .btn {
-    height: 45px;
-    width: auto;
-    padding: 5px;
-    border-radius: 5px;
-    background-color: #add8e6;
-    border: 2px solid #add8e6;
-    margin-top: -25px;
-    margin-left: -15px;
-  }
+.men {
+  margin: 50px;
+  padding: 70px;
+  padding-top: 80px;
+  height: 200px;
+  width: 240px;
+  border: 2px solid black;
+  border-radius: 10px;
+  background-image: url("../assets/mensclothes.jpg");
+  background-size: 125%;
+  background-repeat: no-repeat;
  
-  .search-container {
-    /* margin-top: 99%; */
+ 
+
+}
+
+.home_btn{
+  margin-left: -10px;
+  padding: 6px;
+ height: 38px;
+ width:115px;
+  border-radius: 5px;
+  background-color:bisque;
+}
+.home_btn:hover{
+  background-color: blue;
+  color: white;
+  border: 2px solid white;
+}
+
+.arrived{
+  margin-left: 1080px;
+  }
+  
+  .shopnow{
+  width: 140px;
+  height: 8px;
+  border-bottom: 2px solid #000; 
+  margin-left: 15px;
+  }
+  .images_slider {
     display: flex;
-    justify-content: center;
     align-items: center;
-  margin-bottom: -20px;
+    height: auto;
+    padding-top: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
   
-  .search {
-    width: 300px;
-    background-color: blue;
-    margin-top: 20px;
-    margin-bottom: 10px;
+  .images_slider > div {
+    margin-bottom: 20px; /* Space between items */
   }
 
-  .content {
-    height: auto; /* Adjust height for mobile view */
-    padding: 10px; /* Add padding for better spacing */
-    flex-direction: column; /* Stack items vertically */
-    text-align: center; /* Center text content */
-    margin-top: 20px;
-   padding-left: -30px;
-  }
-
-  .content::before {
-    opacity: 0.5; /* Adjust the overlay opacity for better visibility */
-  }
 
   
+  .text_slide{
+    width: 340px;
+    margin-left: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 30px;
+    padding: 15px;
+  }
+  @media (max-width: 768px) {
+    .land_bg {
+      height:auto;
+      
+    }
+  
+    .slider-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+     
+    }
+    
+    .slide {
+      margin-right: 30px;
+     
+    }
+    
+    .slide-image {
+      height: 350px;
+      width: 250px;
+    }
+    .text-danger{
+     margin-top: 20px;
+      }
+     .dis{
+     flex-direction: column;
+      }
+      .hero {
+       margin-top: 10px;
+       width: 90%;
+        margin-left: 15px;
+       }
+  
+    .para {
+      width: auto;
+      margin-left: 0;
+      margin-top: 10px;
+      text-align: center;
+    }
+  
+    .heading {
+      font-size: 2rem;
+      width: auto;
+      margin: 10px auto;
+    }
+  
+    .image-container::before {
+      width: 90%;
+      height: auto;
+      top: 0;
+      margin-left: 5%;
+      border-width: 3px;
+    }
+  
+    .benefits {
+      width: auto;
+      margin: 20px auto;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      margin-left: 30px;
+      font-size: 1.1rem;
+    }
+  
+    .benefit-item {
+      margin-bottom: 20px;
+    }
+  
+    .btn_shopnow {
+      margin: 20px auto;
+      width: 80%;
+      text-align: center;
+      margin-left: 38px;
+    }
+  
+    .home_img {
+      width: 90%;
+      height: auto;
+      margin-top: 20px;
+      margin-left: 20px;
+    }
+
+    
+    .home_img1 {
+      margin-top: 80px;
+      height: 330px;
+      width: 310px;
+      margin-left: 180px;
+      transition: transform 0.3s ease;
+      z-index: 0;
+    }
+
+    .para1 {
+      width: auto;
+      margin-left: 0;
+      margin-top: 10px;
+      text-align: center;
+    }
+  
+    .heading1 {
+      font-size: 2rem;
+      width: auto;
+      margin: 10px auto;
+    }
+    .text{
+      width: auto;
+      margin-left: 0;
+      margin-top: 10px;
+      text-align: center;
+    }
+
+    .para2{
+      width: auto;
+      margin-left: 0;
+      margin-top: 10px;
+      text-align: center;
+    }
+  
+    .heading2 {
+      font-size: 2rem;
+      width: auto;
+      margin: 10px auto;
+      text-align: center;
+    }
+    
+    .text1{
+      width: 350px;
+      margin-left: 0;
+      margin-top: 10px;
+      text-align: center;
+    }
+
+    .btn_shopnow1 {
+      margin: 20px auto;
+      width: 80%;
+      text-align: center;
+      margin-left: 38px;
+    }
+
+    .content {
+      height: auto; /* Adjust height for mobile view */
+      padding: 10px; /* Add padding for better spacing */
+      flex-direction: column; /* Stack items vertically */
+      text-align: center; /* Center text content */
+      margin-top: 20px;
+     padding-left: -30px;
+    }
+  
+    .content::before {
+      opacity: 0.7; /* Adjust the overlay opacity for better visibility */
+    }
+  
+
+    
   
 .home1{
   flex-direction: column;
@@ -594,5 +650,33 @@ margin-left: 160px;
 flex-direction: column;
 margin-left: 5px;
 text-align: center;
+}
+
+.images_slider {
+  flex-direction:column; /* Switch to row for desktop */
+  height:auto;
+  padding-top: 80px;
+}
+
+.images_slider > div {
+  margin-bottom: 0; /* Remove space between items */
+}
+
+.slider_text{
+  width: 300px;
+  margin-left:30px ;
+  box-shadow:0 4px 8px rgba(0, 0, 0, 0.1) ;
+  margin-top: 30px;
+  padding: 15px;
+margin-left: 30px;
+}
+
+.slider_text{
+  width: 440px;
+  margin-left:30px ;
+  box-shadow:0 4px 8px rgba(0, 0, 0, 0.1) ;
+  margin-top: 30px;
+  padding: 15px;
+
 }
 }

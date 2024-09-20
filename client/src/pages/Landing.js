@@ -193,7 +193,8 @@ const Landing = () => {
                     margin: "20px",
                     height: "auto",
                     paddingBottom: "20px",
-                    width:"280px"
+                    width:"280px",
+                    backgroundColor:"white"
                   }}
                 >
                   <img
@@ -311,7 +312,7 @@ const Landing = () => {
                 />
                 <h5
                   style={{
-                    marginLeft: "10px",
+                    textAlign:"center",
                     marginTop: "-10px",
                     fontSize: "1.3rem",
                     fontWeight: "bold",
@@ -327,11 +328,11 @@ const Landing = () => {
                     display: "flex",
                   }}
                 >
-                  <div style={{ fontWeight: "bold", fontSize: "1.2rem" }}>
+                  <div style={{ fontWeight: "bold", fontSize: "1.2rem",marginLeft:"50px" }}>
                     {" "}
                     Price:{" "}
                   </div>{" "}
-                  <div style={{ fontSize: "1.2rem", color: "blue" }}>
+                  <div style={{ fontSize: "1.2rem", color: "blue", }}>
                     ${product.price}
                   </div>
                 </h6>
@@ -362,9 +363,9 @@ const Landing = () => {
     <>
       <Navbar />
 
-      <div className='land_bg'>
+     <div className='land_bg'>
         <Slider {...settings}>
-          <div className="slide">
+           <div className="slide">
             <div className="dis">
               <div className="hero">
                 <p className="para">Our Benefit</p>
@@ -372,17 +373,18 @@ const Landing = () => {
                   Helping others find a better way
                 </h1>
 
-                <div className="benefits" style={{display:"flex",marginLeft:"300px",marginTop:"20px"}}>
-                  <div className="benefit-item" style={{display:"flex",marginRight:"40px"}}>
-                    <CheckCircleOutlined icon={faBars}  style={{fontSize:"1.4rem",marginRight:"5px"}}/>
+                <div className="benefits" >
+
+                  <div className="benefit-item" >
+                    <CheckCircleOutlined icon={faBars} className="icons" />
                     <h5>Long Life T-Shirts</h5>
                   </div>
                   <div className="benefit-item">
-                    <CheckCircleOutlined icon={faBars}  style={{fontSize:"1.4rem",marginRight:"5px"}}/>
+                    <CheckCircleOutlined icon={faBars}  />
                     <h5>Created By Nature</h5>
                   </div>
                   <div className="benefit-item">
-                    <CheckCircleOutlined icon={faBars}  style={{fontSize:"1.4rem",marginRight:"5px"}}/>
+                    <CheckCircleOutlined icon={faBars} />
                     <h5>The Rest Behind</h5>
                   </div>
                 </div>
@@ -392,31 +394,21 @@ const Landing = () => {
                 </button>
                 </div>
               </div>
+
               <div className="image-container">
                 <img className="home_img" src={img1} alt="presentation" />
               </div>
             </div>
-          </div>
 
-          <div className="slide">
+          </div> 
+           <div className="slide">
             <div className="dis">
               <div className="hero" style={{marginLeft:"30px"}}>
               <p className="para1">Our products</p>
               <h1 className="heading1">
                       They're amazing everywhere you look
                 </h1>
-                <div
-                      style={{
-                        display: "flex",
-                        marginLeft: "48px",
-                        marginTop: "20px",
-                        width: "500px",
-                        marginRight: "250px",
-                        fontSize: "1.4rem",
-                        fontWeight: "bold",
-                        textAlign: "center",
-                      }}
-                    >
+                <div className="text">
                       We need only one thing , customer’s SATISFACTION
                     </div>
 
@@ -426,26 +418,18 @@ const Landing = () => {
                     
               </div>
               <div className="image-container" style={{marginLeft:"-150px"}}>
-                <img className="home_img" src={img2} alt="presentation" />
+                <img className="home_img1" src={img2} alt="presentation" />
               </div>
             </div>
-          </div>
+          </div> 
 
-           <div className="slide">
+          <div className="slide">
             <div className="dis">
               <div className="hero">
               <p className="para2" style={{marginTop:"00px"}}>About us</p>
               <h1 className="heading1">The Best Collection of Shirts</h1>
                
-                 <div
-                      style={{
-                        display: "flex",
-                        marginLeft: "100px",
-                        marginTop: "20px",
-                        width: "450px",
-                        marginRight: "250px",
-                      }}
-                    >
+                 <div className="text1" >
                       fashion style for a long time with some big name companies
                       behind it. I’ve gotten to watch our videos, interview and
                       look at all of their cool products in person as well.” At
@@ -457,17 +441,19 @@ const Landing = () => {
                       Shop Now <ArrowRightOutlined icon={faBars} />
                     </button>
               </div>
+
               <div className="image-container">
                 <img className="home_img" src={img3} alt="presentation" />
               </div>
-            </div>
-          </div> 
 
-        </Slider>
-      </div>
+            </div>
+          </div>   
+
+       </Slider>
+      </div>  
       
 
-      {/* <div style={{ backgroundColor: "#D1EAF0" }}>
+       {/* <div style={{ backgroundColor: "#D1EAF0" }}>
         <div class="search-container">
           <Search
             className="search"
@@ -535,7 +521,7 @@ const Landing = () => {
             </div>
           </div>
         </Carousel>
-      </div> */}
+      </div>  */}
 
 
 
@@ -629,13 +615,13 @@ const Landing = () => {
         </div> 
       </div>
 
-      <div style={{display:"flex",height:"400px",paddingTop:"80px",boxShadow:"0 4px 8px rgba(0, 0, 0, 0.1)"}}>
+      <div className="images_slider">
      <motion.div style={{ marginRight: "20px" }}
           initial={{ opacity: 0, scale: 0, y: 0 }}
           whileInView={{ opacity: 1, scale: 1, x: 0 }} 
           transition={{ duration: 1.0 }}
         >
-          <p style={{  width: "440px", marginLeft: "30px",boxShadow:"0 4px 8px rgba(0, 0, 0, 0.1)",marginTop:"30px",padding:"15px" }}> Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+          <p className="text_slider" style={{  width: "440px", marginLeft: "30px",boxShadow:"0 4px 8px rgba(0, 0, 0, 0.1)",marginTop:"30px",padding:"15px" }}> Lorem Ipsum is simply dummy text of the printing and typesetting industry.
              Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
              when an unknown printer took a galley of type and scrambled it to make a type
               specimen book. It has survived not only five centuries, but also the leap into electronic
