@@ -16,23 +16,28 @@ connectToMongo();
 // Define the allowed origins
 const allowedOrigins = [
   'https://66a1e5e56c7a62a862ee35d5--fantastic-pony-b3b050.netlify.app',
-  'http://localhost:3000' // Add other allowed origins as needed
+  'http://localhost:3000', // Add other allowed origins as needed
 ];
 
 // Apply middleware for CORS
 app.use(cors({
   origin: (origin, callback) => {
-    // Allow requests with no origin (like mobile apps or curl requests)
-    if (!origin) return callback(null, true);
+    if (!origin) return callback(null, true); // Allow requests with no origin
     if (allowedOrigins.includes(origin)) {
       return callback(null, true);
     } else {
       return callback(new Error('Not allowed by CORS'));
     }
   },
-  methods: 'GET,POST,PUT,DELETE',
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
   credentials: true,
 }));
+
+// Logging middleware: place it here
+app.use((req, res, next) => {
+  console.log(`${req.method} ${req.url}`);
+  next();
+});
 
 // Parse incoming JSON requests with a size limit
 app.use(express.json({ limit: '50mb' }));
