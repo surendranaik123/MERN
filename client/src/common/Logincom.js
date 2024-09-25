@@ -20,7 +20,7 @@ export default function LoginCom() {
 
     try {
       const response = await fetch(
-        "https://mern-0ycy.onrender.com/api/v1/login_common",
+        "https://corsproxy.io/https://mern-0ycy.onrender.com/api/v1/login_common",
         {
           method: "POST",
           headers: {
