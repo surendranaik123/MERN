@@ -3,6 +3,7 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faInstagram, faFacebook, faTwitter, faGithub, faDribbble } from '@fortawesome/free-brands-svg-icons';
+import { useNavigate } from 'react-router-dom';
 
 // const iconStyle = {
 //   fontSize: "2px", // Adjust the font size as needed
@@ -25,6 +26,8 @@ const footerText = {
 };
  
 const Footer = () => {
+
+
   return (
     <footer className="bg-dark text-light">
       <div className="container py-5">
@@ -55,10 +58,10 @@ const Footer = () => {
             <h3 className="text-uppercase" style={footerTextStyle}>Company</h3>
             <ul className="list-unstyled">
               <li style={{ marginBottom: "10px" }}>
-                <a href="/" className="text-light" style={footerText}>Customer Service </a>
+                <a href="/signuppage" className="text-light" style={footerText}>Customer Service </a>
               </li>
               <li style={{ marginBottom: "10px" }}>
-                <a href="/" className="text-light" style={footerText}>Terms of Use</a>
+                <a href="/signin" className="text-light" style={footerText}>Terms of Use</a>
               </li>
               <li style={{ marginBottom: "10px" }}>
                 <a href="/" className="text-light" style={footerText}>Priveacy</a>
