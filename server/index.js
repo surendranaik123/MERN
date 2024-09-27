@@ -15,7 +15,7 @@ connectToMongo();
 
 // Define the allowed origins
 const allowedOrigins = [
-  'https://66a1e5e56c7a62a862ee35d5--fantastic-pony-b3b050.netlify.app',
+  'https://effulgent-duckanoo-942669.netlify.app',
   'http://localhost:3000', // Add other allowed origins as needed
 ];
 
