@@ -49,7 +49,7 @@ const App = () => {
           <BrowserRouter>
             
             <Routes>
-            <Route path="/userdetail" element={<Landing/>} /> 
+            <Route path="/" element={<Landing/>} /> 
           <Route path="/userreg" element={<UserReg/>} />
           <Route path="/edit/:id" element={<Edit/>} />
           <Route path="/userdetails" element={<FetchData/>} />
@@ -80,7 +80,7 @@ const App = () => {
           <Route path='*' element={<div>Page Not Found!</div>}/>
           <Route path='/register' element={<Register/>}/>
           <Route path='/login' element={<LoginCom/>}/>
-          <Route path='/' element={<DashboardUser/>}/>
+          <Route path='/userdetail' element={<DashboardUser/>}/>
           <Route path='/dashboard' element={<DashBoard/>}/>
           <Route path='/productadmin' element={<Productadmin/>}/>
           <Route path='/header' element={<Header/>}/>

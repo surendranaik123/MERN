@@ -15,14 +15,14 @@ connectToMongo();
 
 // Define the allowed origins
 const allowedOrigins = [
-  'https://66f6422790b096ca05dcf045--stellar-pastelito-4cc5e1.netlify.app/',
-  'http://localhost:3000', // Add other allowed origins as needed
+  'https://stellar-pastelito-4cc5e1.netlify.app',  // Your Netlify URL
+  'http://localhost:3000',  // For local development
 ];
 
-// Apply middleware for CORS
+// Apply CORS middleware
 app.use(cors({
   origin: (origin, callback) => {
-    if (!origin) return callback(null, true); // Allow requests with no origin
+    if (!origin) return callback(null, true);  // Allow requests without an origin (like Postman or mobile apps)
     if (allowedOrigins.includes(origin)) {
       return callback(null, true);
     } else {
@@ -30,10 +30,13 @@ app.use(cors({
     }
   },
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  credentials: true,
+  credentials: true,  // Allow credentials (cookies, HTTP authentication, etc.)
 }));
 
-// Logging middleware: place it here
+// Handle preflight requests for all routes (important for handling CORS with non-simple requests like POST, PUT, DELETE)
+app.options('*', cors());
+
+// Logging middleware
 app.use((req, res, next) => {
   console.log(`${req.method} ${req.url}`);
   next();
